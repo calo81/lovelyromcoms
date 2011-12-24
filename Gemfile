@@ -8,7 +8,8 @@ gem 'rails', '3.1.0'
 gem 'sqlite3'
 gem 'curb'
 gem "mongo_mapper"
-
+gem 'devise', '~> 1.4.3'
+gem 'mongoid'
 # Use unicorn as the web server
 # gem 'unicorn'
 
