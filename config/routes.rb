@@ -1,5 +1,6 @@
 Lovelyromcoms::Application.routes.draw do
   devise_for :users
+  resources :movies
 
   root :to => "home#index"
   # The priority is based upon order of creation:

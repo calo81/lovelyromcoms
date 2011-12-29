@@ -2,7 +2,11 @@ Given /^(?:|I )am on (.+)$/ do |page_name|
   visit path_to(page_name)
 end
 
-When /^user can see (["]{1}([a-zA-Z ]+)["]{1}) text in the page$/ do |text_quoted,text|
+When /^user can see (["]{1}([0-9a-zA-Z ]+)["]{1}) text in the page$/ do |text_quoted,text|
+  page.has_content?(text).should be_true
+end
+
+When /^I should see (["]{1}([0-9a-zA-Z @\.]+)["]{1})$/ do |text_quoted,text|
   page.has_content?(text).should be_true
 end
 
@@ -14,11 +18,27 @@ When /^user clicks link (["]{1}([a-zA-Z ]+)["]{1})$/ do |all,link|
   click_link(link)
 end
 
+When /^I follow (["]{1}([a-zA-Z ]+)["]{1})$/ do |all,link|
+  click_link(link)
+end
+
+When /^I follow ([a-z_]+)$/ do |link|
+  click_link(link)
+end
+
 When /^user fill in ([a-z_]+) with ([a-z_@\.]+)$/ do |id,value|
   fill_in(id, :with => value)
 end
 
+When /^I fill in (["]{1}([a-zA-Z ]+)["]{1}) with (["]{1}([a-zA-Z @\.]+)["]{1})$/ do |full_path,id,full_path2,value|
+  fill_in(id, :with => value)
+end
+
 When /^user press ([a-z_]+)$/ do |id|
+  click_button(id)
+end
+
+When /^I press (["]{1}([a-zA-Z ]+)["]{1})$/ do |full_path,id|
   click_button(id)
 end
 

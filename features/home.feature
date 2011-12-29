@@ -23,6 +23,8 @@ Scenario: Movie of the day show indicators
   And user can see "Real life likeness" text in the page
   And user can see "Love and sex scenes appeal" text in the page
 
-Scenario: User cannot set any value  if not logged in
+
+Scenario: I can click in the movie title and go to the movie page
   Given I am on the homepage
-  Then the field couple_chemistry doesn't exist
+  When I follow movie_of_the_day_link
+  Then I should see "Trailer"

@@ -3,6 +3,7 @@ require 'mongo'
 require 'active_support'
 class RottenMovieRetriever
   ROTTEN_API = "rrmbqvpbr9ujrf4yu855aczv"
+  TMDB_API = "c4123ba475b7087ce195800a8e61e29e"
 
   def initialize
     @db = Mongo::Connection.new.db("lovelyromcoms_development")
@@ -35,21 +36,24 @@ class RottenMovieRetriever
   def store_movie(movie)
     if movie
       @movie_collection.insert movie
+      File.open("movies/#{movie["rotten_id"]}", "w") do |f|
+        f.puts movie.to_s
+      end
     end
   end
 
   def retrieve_actor_image(actor_name)
-    actor_name_underscore = actor_name.gsub(" ","_")
-    actor_name_underscore.gsub!("-","")
+    actor_name_underscore = actor_name.gsub(" ", "_")
+    actor_name_underscore.gsub!("-", "")
     url = "http://www.rottentomatoes.com/celebrity/#{actor_name_underscore}/pictures/"
     curl = Curl::Easy.http_get(url)
     curl.perform
     celebrity_page_html = curl.body_str
     line = celebrity_page_html.scan(/<img.*alt="#{actor_name}".*>/)[0]
     if line
-    index1 = line.index("src")+5
-    index2 =  line.index("jpg")+3-index1
-    return line.slice(index1,index2)
+      index1 = line.index("src")+5
+      index2 = line.index("jpg")+3-index1
+      return line.slice(index1, index2)
     else
       return 'http://www.team-renegade-racing.co.uk/wp-content/gallery/team-photos/placeholder.jpg'
     end
@@ -72,7 +76,17 @@ class RottenMovieRetriever
     curl = Curl::Easy.http_get(url)
     curl.perform
     page_html = curl.body_str
-    page_html.include?("/genre/Comedy")  and  page_html.include?("/genre/Romance")
+    page_html.include?("/genre/Comedy") and page_html.include?("/genre/Romance")
+  end
+
+  def update_movie_synopsis(movie)
+    if movie["synopsis"].empty?
+      url="http://api.themoviedb.org/2.1/Movie.imdbLookup/en/json/#{TMDB_API}/tt#{extract_imdb_id(movie)}"
+      curl = Curl::Easy.http_get(url)
+      curl.perform
+      json_hash = ActiveSupport::JSON.decode(curl.body_str)
+      movie["synopsis"] = json_hash[0]["overview"]
+    end
   end
 
   def retrieve_and_store_movies(search_term)
@@ -81,7 +95,11 @@ class RottenMovieRetriever
     total = json_hash["total"].to_i
     if total>0
       movie = request_full_details(json_hash['movies'][0]['id'])
+      movie["rotten_id"] = movie["id"]
+      movie["id"]=nil
+      movie.reject! { |k, v| v.nil? }
       if movie and movie_is_comedy_romance(movie)
+        update_movie_synopsis(movie)
         actor1_name = movie['abridged_cast'][0]['name']
         actor2_name = movie['abridged_cast'][1]['name']
         actor1_image = retrieve_actor_image actor1_name
@@ -107,10 +125,10 @@ File.open("mapreduce/results.txt") do |file|
     movie_name.gsub!(" ", "+")
     puts movie_name
     begin
-    retriever.retrieve_and_store_movies movie_name
-    sleep(0.2)
+      retriever.retrieve_and_store_movies movie_name
+      sleep(0.2)
     rescue
-      puts 'error but continuing'
+      puts 'error but continuing. Error '+ $!.to_s
     end
   end
 end

@@ -3,6 +3,8 @@ module NavigationHelpers
     case page_name
       when /the home\s?page/
         '/'
+      else
+        page_name
     end
   end
 end

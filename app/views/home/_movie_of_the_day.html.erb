@@ -1,4 +1,7 @@
-Movie of the day: <%= @movie_of_the_day.title %> <br/>
+Movie of the day:
+<%= link_to edit_movie_path(@movie_of_the_day), :id => "movie_of_the_day_link" do%>
+     <%= @movie_of_the_day.title %> <br/>
+<% end %>
 Couple: <img width="115" height="100" src="<%= @movie_of_the_day.abridged_cast[0]['image'] %>"/><%= @movie_of_the_day.abridged_cast[0]['name'] %>, <img width="115" height="100" src="<%= @movie_of_the_day.abridged_cast[1]['image'] %>"/><%= @movie_of_the_day.abridged_cast[1]['name'] %> <br/>
 couple chemistry:<br/>
 He handsometer:<br/>

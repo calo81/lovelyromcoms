@@ -10,7 +10,7 @@ And /^user can see movie of the day both main characters names in the page$/ do
   page.has_content?(main_character2).should be_true
 end
 
-Then /^the field ([a-z_])+ doesn't exist$/ do |field_name|
+Then /^the field ([a-z_]+) doesn't exist$/ do |field_name|
    begin
      find_field(field_name)
      true.should be_false
@@ -18,6 +18,10 @@ Then /^the field ([a-z_])+ doesn't exist$/ do |field_name|
    end
 end
 
-Then /the field ([a-z_])+ exists/ do |field_name|
+Then /the field ([a-z_]+) exists/ do |field_name|
+   find_field(field_name)
+end
+
+Then /the field ([a-z_]+) exist/ do |field_name|
    find_field(field_name)
 end
