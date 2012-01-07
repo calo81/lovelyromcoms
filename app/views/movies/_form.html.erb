@@ -1,39 +1,39 @@
 <%= form_for(@movie) do |f| %>
     <p>
       <%= f.label "Couple Chemistry" %>
-      <%= f.text_field :indicators, :name => "movie[indicators][couple_chemistry]", :id=>"couple_chemistry" %>
+      <%= f.text_field :indicators, :name => "movie[indicators][couple_chemistry]", :id=>"couple_chemistry", :value=>@movie.indicator_for_user("couple_chemistry",current_user) %>
     </p>
     <p>
       <%= f.label "Her attractiveness" %>
-      <%= f.text_field :indicators, :name => "movie[indicators][she_handsometer]", :id=>"she_handsometer" %>
+      <%= f.text_field :indicators, :name => "movie[indicators][she_handsometer]", :id=>"she_handsometer", :value=>@movie.indicator_for_user("she_handsometer",current_user) %>
     </p>
     <p>
       <%= f.label "His attractivness" %>
-      <%= f.text_field :indicators, :name => "movie[indicators][he_handsometer]", :id=>"he_handsometer" %>
+      <%= f.text_field :indicators, :name => "movie[indicators][he_handsometer]", :id=>"he_handsometer", :value=>@movie.indicator_for_user("he_handsometer",current_user) %>
     </p>
     <p>
       <%= f.label "Location" %>
-      <%= f.text_field :indicators, :name => "movie[indicators][dreamy_location]", :id=>"dreamy_location" %>
+      <%= f.text_field :indicators, :name => "movie[indicators][dreamy_location]", :id=>"dreamy_location", :value=>@movie.indicator_for_user("dreamy_location",current_user) %>
     </p>
     <p>
       <%= f.label "Crying factor" %>
-      <%= f.text_field :indicators, :name => "movie[indicators][tear_rate]", :id=>"tear_rate" %>
+      <%= f.text_field :indicators, :name => "movie[indicators][tear_rate]", :id=>"tear_rate", :value=>@movie.indicator_for_user("tear_rate",current_user) %>
     </p>
     <p>
       <%= f.label "Happy Ending" %>
-      <%= f.text_field :indicators, :name => "movie[indicators][happy_ending]", :id=>"happy_ending" %>
+      <%= f.text_field :indicators, :name => "movie[indicators][happy_ending]", :id=>"happy_ending", :value=>@movie.indicator_for_user("happy_ending",current_user) %>
     </p>
     <p>
       <%= f.label "Fun" %>
-      <%= f.text_field :indicators, :name => "movie[indicators][fun_factor]", :id=>"fun_factor" %>
+      <%= f.text_field :indicators, :name => "movie[indicators][fun_factor]", :id=>"fun_factor", :value=>@movie.indicator_for_user("fun_factor",current_user) %>
     </p>
     <p>
       <%= f.label "Like in real life" %>
-      <%= f.text_field :indicators, :name => "movie[indicators][real_life_likeness]", :id=>"real_life_likeness" %>
+      <%= f.text_field :indicators, :name => "movie[indicators][real_life_likeness]", :id=>"real_life_likeness", :value=>@movie.indicator_for_user("real_life_likeness",current_user) %>
     </p>
     <p>
       <%= f.label "Love scenes" %>
-      <%= f.text_field :indicators, :name => "movie[indicators][sex_scenes]", :id=>"sex_scenes" %>
+      <%= f.text_field :indicators, :name => "movie[indicators][sex_scenes]", :id=>"sex_scenes", :value=>@movie.indicator_for_user("sex_scenes",current_user) %>
     </p>
     <p>
       <%= f.label "Why would yo recommend it" %>
