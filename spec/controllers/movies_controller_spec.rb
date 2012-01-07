@@ -11,5 +11,9 @@ describe MoviesController do
       Movie.should_receive(:find_by_rotten_id).with(1).and_return(movie)
       @controller.edit
       @controller.instance_variable_get("@movie").should == movie
-    end
+  end
+
+  it "should return a list of movies by limit as JSON" do
+
+  end
 end

@@ -6,8 +6,13 @@ When /^user can see (["]{1}([0-9a-zA-Z ]+)["]{1}) text in the page$/ do |text_qu
   page.has_content?(text).should be_true
 end
 
-When /^I should see (["]{1}([0-9a-zA-Z @\.]+)["]{1})$/ do |text_quoted,text|
+When /^I should see "([^"]+)"$/ do |text|
   page.has_content?(text).should be_true
+end
+
+When /^I should see css "([a-z ]+)" with content "([A-Za-z 0-9]+)"$/ do |css,title|
+  clean_text = find(css).text.gsub("\n","")
+  clean_text.strip.should == title
 end
 
 When /^user clicks link ([a-z_]+)$/ do |link|

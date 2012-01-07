@@ -1,3 +1,56 @@
-<%=@movie.title%>      <br/>
-Synopsis: &nbsp;<%=@movie.synopsis%>     <br/>
-Trailer:
+<%=@movie.title%>      <br/><br/><br/>
+<img width="120" height="178" src="<%= @movie.posters['profile'] %>"/><br/><br/><br/>
+<b>Synopsis:</b> &nbsp;<%=@movie.synopsis%>     <br/><br/><br/>
+<b>Trailer:</b> <br/>
+
+<b>Characteristics:</b>
+<% indicators =  (@movie["indicators"] or {}) %>
+<% couple_chemistry = (indicators["couple_chemistry"] or {}) %>
+<% he_handsome = (indicators["he_handsome"] or {}) %>
+<% she_handsome = (indicators["she_handsome"] or {}) %>
+<% dream_place = (indicators["dream_place"] or {}) %>
+<% tear_rate = (indicators["tear_rate"] or {}) %>
+<% happy_ending = (indicators["happy_ending"] or {}) %>
+<% fun_factor = (indicators["fun_factor"] or {}) %>
+<% real_life_likely = (indicators["real_life_likely"] or {}) %>
+<% sex_scenes = (indicators["sex_scenes"] or {}) %>
+
+<%
+   couple_chemistry_total = (couple_chemistry["total"] or "-")
+   he_handsome_total = (he_handsome["total"] or "-")
+   she_handsome_total = (she_handsome["total"] or "-")
+   dream_place_total = (dream_place["total"] or "-")
+   tear_rate_total = (tear_rate["total"] or "-")
+   happy_ending_total = (happy_ending["total"] or "-")
+   fun_factor_total = (fun_factor["total"] or "-")
+   real_life_likely_total = (real_life_likely["total"] or "-")
+   sex_scenes_total = (sex_scenes["total"] or "-")
+
+   couple_chemistry_reviewers = couple_chemistry["reviewers"].nil? ? "0" : couple_chemistry["reviewers"].size
+   he_handsome_reviewers = he_handsome["reviewers"].nil? ? "0" : he_handsome["reviewers"].size
+   she_handsome_reviewers = she_handsome["reviewers"].nil? ? "0" : she_handsome["reviewers"].size
+   dream_place_reviewers = dream_place["reviewers"].nil? ? "0" : dream_place["reviewers"].size
+   tear_rate_reviewers = tear_rate["reviewers"].nil? ? "0" : tear_rate["reviewers"].size
+   happy_ending_reviewers = happy_ending["reviewers"].nil? ? "0" : happy_ending["reviewers"].size
+   fun_factor_reviewers = fun_factor["reviewers"].nil? ? "0" : fun_factor["reviewers"].size
+   real_life_likely_reviewers = real_life_likely["reviewers"].nil? ? "0" : real_life_likely["reviewers"].size
+   sex_scenes_reviewers = sex_scenes["reviewers"].nil? ? "0" : sex_scenes["reviewers"].size
+%>
+
+<br/>Couple Chemistry: <%=couple_chemistry_total %> (<%=couple_chemistry_reviewers%> Reviewers)
+<br/>How handsome is he: <%=he_handsome_total  %> (<%=he_handsome_reviewers%> Reviewers)
+<br/>How pretty is she: <%=she_handsome_total  %> (<%=she_handsome_reviewers%> Reviewers)
+<br/>Is it a dreamy place: <%=dream_place_total  %> (<%=dream_place_reviewers%> Reviewers)
+<br/>How much did you cry: <%=tear_rate_total  %> (<%=tear_rate_reviewers%> Reviewers)
+<br/>How happy were you after watching: <%=happy_ending_total  %> (<%=happy_ending_reviewers%> Reviewers)
+<br/>How fun do you think it was: <%=fun_factor_total %> (<%=fun_factor_reviewers%> Reviewers)
+<br/>Is it a real life likely situation: <%=real_life_likely_total %> (<%=real_life_likely_reviewers%> Reviewers)
+<br/>Were the passion scenes good: <%=sex_scenes_total %> (<%=sex_scenes_reviewers%> Reviewers)
+
+
+<%= admins_only do %>
+    <br/><br/><b>Your veridict</b>
+   <%= render "form" %>
+<% end %>
+
+

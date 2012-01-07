@@ -1,0 +1,43 @@
+<%= form_for(@movie) do |f| %>
+    <p>
+      <%= f.label "Couple Chemistry" %>
+      <%= f.text_field :indicators, :name => "movie[indicators][couple_chemistry]", :id=>"couple_chemistry" %>
+    </p>
+    <p>
+      <%= f.label "Her attractiveness" %>
+      <%= f.text_field :indicators, :name => "movie[indicators][she_handsometer]", :id=>"she_handsometer" %>
+    </p>
+    <p>
+      <%= f.label "His attractivness" %>
+      <%= f.text_field :indicators, :name => "movie[indicators][he_handsometer]", :id=>"he_handsometer" %>
+    </p>
+    <p>
+      <%= f.label "Location" %>
+      <%= f.text_field :indicators, :name => "movie[indicators][dreamy_location]", :id=>"dreamy_location" %>
+    </p>
+    <p>
+      <%= f.label "Crying factor" %>
+      <%= f.text_field :indicators, :name => "movie[indicators][tear_rate]", :id=>"tear_rate" %>
+    </p>
+    <p>
+      <%= f.label "Happy Ending" %>
+      <%= f.text_field :indicators, :name => "movie[indicators][happy_ending]", :id=>"happy_ending" %>
+    </p>
+    <p>
+      <%= f.label "Fun" %>
+      <%= f.text_field :indicators, :name => "movie[indicators][fun_factor]", :id=>"fun_factor" %>
+    </p>
+    <p>
+      <%= f.label "Like in real life" %>
+      <%= f.text_field :indicators, :name => "movie[indicators][real_life_likeness]", :id=>"real_life_likeness" %>
+    </p>
+    <p>
+      <%= f.label "Love scenes" %>
+      <%= f.text_field :indicators, :name => "movie[indicators][sex_scenes]", :id=>"sex_scenes" %>
+    </p>
+    <p>
+      <%= f.label "Why would yo recommend it" %>
+      <%= f.text_area :recomendations, :id=>"why_would_you_recommned_it" %>
+    </p>
+    <%= f.submit %>
+<% end %>

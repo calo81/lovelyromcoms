@@ -89,6 +89,10 @@ class RottenMovieRetriever
     end
   end
 
+  def remove_nil_properties(movie)
+    movie.reject! { |k, v| v.nil? }
+  end
+
   def retrieve_and_store_movies(search_term)
     json_hash = request_and_get_hash(search_term)
     puts json_hash
@@ -97,7 +101,8 @@ class RottenMovieRetriever
       movie = request_full_details(json_hash['movies'][0]['id'])
       movie["rotten_id"] = movie["id"]
       movie["id"]=nil
-      movie.reject! { |k, v| v.nil? }
+      remove_nil_properties(movie)
+      movie["indicators"]== {}
       if movie and movie_is_comedy_romance(movie)
         update_movie_synopsis(movie)
         actor1_name = movie['abridged_cast'][0]['name']
