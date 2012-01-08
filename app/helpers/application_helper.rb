@@ -1,5 +1,5 @@
 module ApplicationHelper
-  def admins_only(&block)
+  def user_logged(&block)
     block.call if current_user
     nil
   end

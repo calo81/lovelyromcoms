@@ -38,8 +38,8 @@ describe Movie do
     movie = Movie.find_by_rotten_id(770680214)
     user = User.new
     user.id = 12
-    movie["indicators"] = {"couple_chemistry"=>{"total"=>4, "reviewers"=>[{"id"=>123, "value"=>4}]},"he_handsome"=>{"total"=>4, "reviewers"=>[{"id"=>123, "value"=>4}]}}
-    movie.set_indicators_for_user user, "couple_chemistry"=>5,"he_handsome"=>6
+    movie["indicators"] = {"couple_chemistry"=>{"total"=>4, "reviewers"=>[{"id"=>123, "value"=>4}]}, "he_handsome"=>{"total"=>4, "reviewers"=>[{"id"=>123, "value"=>4}]}}
+    movie.set_indicators_for_user user, "couple_chemistry"=>5, "he_handsome"=>6
     movie["indicators"]["couple_chemistry"]["total"].should == 9
     movie["indicators"]["he_handsome"]["total"].should == 10
     movie["indicators"]["couple_chemistry"]["reviewers"][1]["id"].should == 12
@@ -48,18 +48,25 @@ describe Movie do
     movie["indicators"]["he_handsome"]["reviewers"][1]["value"].should == 6
   end
 
-    it "can set many indicators for user at the same time" do
+  it "can set many indicators for user at the same time" do
     movie = Movie.find_by_rotten_id(770680214)
     user = User.new
     user.id = 12
     movie["indicators"] = {"couple_chemistry"=>{"total"=>4, "reviewers"=>[{"id"=>123, "value"=>4}]}}
-    movie.set_indicators_for_user user, "couple_chemistry"=>5,"he_handsome"=>6
+    movie.set_indicators_for_user user, "couple_chemistry"=>5, "he_handsome"=>6
     movie["indicators"]["couple_chemistry"]["total"].should == 9
     movie["indicators"]["he_handsome"]["total"].should == 6
     movie["indicators"]["couple_chemistry"]["reviewers"][1]["id"].should == 12
     movie["indicators"]["couple_chemistry"]["reviewers"][1]["value"].should == 5
     movie["indicators"]["he_handsome"]["reviewers"][0]["id"].should == 12
     movie["indicators"]["he_handsome"]["reviewers"][0]["value"].should == 6
-    end
+  end
+
+  it "returns a list ordered by title" do
+    movies = Movie.retrieve_sorted_by(:title, 10, 1)
+    movies.size.should == 10
+    comparison = (movies[0].title <=> movies[1].title)
+    comparison.should == -1
+  end
 
 end

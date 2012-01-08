@@ -48,7 +48,7 @@
 <br/>Were the passion scenes good: <%=sex_scenes_total %> (<%=sex_scenes_reviewers%> Reviewers)
 
 
-<%= admins_only do %>
+<%= user_logged do %>
     <br/><br/><b>Your veridict</b>
    <%= render "form" %>
 <% end %>

@@ -5,6 +5,17 @@ class Movie
     all[Random.rand(all.count)]
   end
 
+  def self.retrieve_sorted_by(field, elements, page)
+    movies = self.paginate({
+                               :order => [[field, 'ascending']],
+                               :per_page => elements,
+                               :page => page,
+                           })
+    movies.each_with_index do |movie, index|
+      movies[index]=self.find(movie.id)
+    end
+  end
+
   def indicator_for_user(indicator, user)
     return "" unless indicators[indicator]
     self.indicators[indicator]["reviewers"].each do |reviewer|
@@ -25,18 +36,18 @@ class Movie
     self.save!
   end
 
-  def set_indicators_for_user(user,indicators)
+  def set_indicators_for_user(user, indicators)
     self["indicators"] ||= {}
-    indicators.each do |indicator_name,indicator_value|
-       self.indicators[indicator_name] ||= {}
-       self.indicators[indicator_name]["reviewers"] ||= []
-       self.indicators[indicator_name]["reviewers"]<<{"id"=>user.id, "value"=>indicator_value.to_i}
-       total = 0
-       self.indicators[indicator_name]["reviewers"].each do |reviewer|
-         total += reviewer["value"]
-       end
-        self.indicators[indicator_name]["total"]=total
-     end
+    indicators.each do |indicator_name, indicator_value|
+      self.indicators[indicator_name] ||= {}
+      self.indicators[indicator_name]["reviewers"] ||= []
+      self.indicators[indicator_name]["reviewers"]<<{"id"=>user.id, "value"=>indicator_value.to_i}
+      total = 0
+      self.indicators[indicator_name]["reviewers"].each do |reviewer|
+        total += reviewer["value"]
+      end
+      self.indicators[indicator_name]["total"]=total
+    end
     self.save!
   end
 end
