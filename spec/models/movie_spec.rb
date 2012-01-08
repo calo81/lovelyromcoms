@@ -26,10 +26,40 @@ describe Movie do
   it "can set indicators for user and updates indicators" do
     movie = Movie.find_by_rotten_id(770680214)
     user = User.new
-    user.id = 123
+    user.id = 12
     movie["indicators"] = {"couple_chemistry"=>{"total"=>4, "reviewers"=>[{"id"=>123, "value"=>4}]}}
-    value = movie.indicator_for_user("couple_chemistry", user)
-    value.should == 4
+    movie.set_indicator_for_user(user, "couple_chemistry", 5)
+    movie["indicators"]["couple_chemistry"]["total"].should == 9
+    movie["indicators"]["couple_chemistry"]["reviewers"][1]["id"].should == 12
+    movie["indicators"]["couple_chemistry"]["reviewers"][1]["value"].should == 5
   end
+
+  it "can set many indicators for user at the same time" do
+    movie = Movie.find_by_rotten_id(770680214)
+    user = User.new
+    user.id = 12
+    movie["indicators"] = {"couple_chemistry"=>{"total"=>4, "reviewers"=>[{"id"=>123, "value"=>4}]},"he_handsome"=>{"total"=>4, "reviewers"=>[{"id"=>123, "value"=>4}]}}
+    movie.set_indicators_for_user user, "couple_chemistry"=>5,"he_handsome"=>6
+    movie["indicators"]["couple_chemistry"]["total"].should == 9
+    movie["indicators"]["he_handsome"]["total"].should == 10
+    movie["indicators"]["couple_chemistry"]["reviewers"][1]["id"].should == 12
+    movie["indicators"]["couple_chemistry"]["reviewers"][1]["value"].should == 5
+    movie["indicators"]["he_handsome"]["reviewers"][1]["id"].should == 12
+    movie["indicators"]["he_handsome"]["reviewers"][1]["value"].should == 6
+  end
+
+    it "can set many indicators for user at the same time" do
+    movie = Movie.find_by_rotten_id(770680214)
+    user = User.new
+    user.id = 12
+    movie["indicators"] = {"couple_chemistry"=>{"total"=>4, "reviewers"=>[{"id"=>123, "value"=>4}]}}
+    movie.set_indicators_for_user user, "couple_chemistry"=>5,"he_handsome"=>6
+    movie["indicators"]["couple_chemistry"]["total"].should == 9
+    movie["indicators"]["he_handsome"]["total"].should == 6
+    movie["indicators"]["couple_chemistry"]["reviewers"][1]["id"].should == 12
+    movie["indicators"]["couple_chemistry"]["reviewers"][1]["value"].should == 5
+    movie["indicators"]["he_handsome"]["reviewers"][0]["id"].should == 12
+    movie["indicators"]["he_handsome"]["reviewers"][0]["value"].should == 6
+    end
 
 end
