@@ -5,15 +5,15 @@
     </p>
     <p>
       <%= f.label "Her attractiveness" %>
-      <%= f.text_field :indicators, :name => "movie[indicators][she_handsometer]", :id=>"she_handsometer", :value=>@movie.indicator_for_user("she_handsometer",current_user) %>
+      <%= f.text_field :indicators, :name => "movie[indicators][she_handsome]", :id=>"she_handsome", :value=>@movie.indicator_for_user("she_handsome",current_user) %>
     </p>
     <p>
       <%= f.label "His attractivness" %>
-      <%= f.text_field :indicators, :name => "movie[indicators][he_handsometer]", :id=>"he_handsometer", :value=>@movie.indicator_for_user("he_handsometer",current_user) %>
+      <%= f.text_field :indicators, :name => "movie[indicators][he_handsome]", :id=>"he_handsome", :value=>@movie.indicator_for_user("he_handsome",current_user) %>
     </p>
     <p>
       <%= f.label "Location" %>
-      <%= f.text_field :indicators, :name => "movie[indicators][dreamy_location]", :id=>"dreamy_location", :value=>@movie.indicator_for_user("dreamy_location",current_user) %>
+      <%= f.text_field :indicators, :name => "movie[indicators][dream_place]", :id=>"dream_place", :value=>@movie.indicator_for_user("dream_place",current_user) %>
     </p>
     <p>
       <%= f.label "Crying factor" %>
@@ -29,7 +29,7 @@
     </p>
     <p>
       <%= f.label "Like in real life" %>
-      <%= f.text_field :indicators, :name => "movie[indicators][real_life_likeness]", :id=>"real_life_likeness", :value=>@movie.indicator_for_user("real_life_likeness",current_user) %>
+      <%= f.text_field :indicators, :name => "movie[indicators][real_life_likely]", :id=>"real_life_likely", :value=>@movie.indicator_for_user("real_life_likely",current_user) %>
     </p>
     <p>
       <%= f.label "Love scenes" %>
