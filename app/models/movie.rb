@@ -5,9 +5,10 @@ class Movie
     all[Random.rand(all.count)]
   end
 
-  def self.retrieve_sorted_by(field, elements, page)
+  def self.retrieve_sorted_by(field, sorti=:asc,elements=10, page=1)
+    sort = sorti == :desc ? :desc : :asc
     movies = self.paginate({
-                               :order => [[field, 'ascending']],
+                               :order => [[field, sort]],
                                :per_page => elements,
                                :page => page,
                            })

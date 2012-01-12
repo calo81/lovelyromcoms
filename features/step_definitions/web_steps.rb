@@ -10,6 +10,12 @@ When /^I should see "([^"]+)"$/ do |text|
   page.has_content?(text).should be_true
 end
 
+When /^I should see elements with class "([^"]+)" ([0-9]+) times$/ do |text,times|
+  results = all(".#{text}")
+  results.size.should == times.to_i
+end
+
+
 When /^I should see css "([a-z ]+)" with content "([A-Za-z 0-9]+)"$/ do |css,title|
   clean_text = find(css).text.gsub("\n","")
   clean_text.strip.should == title

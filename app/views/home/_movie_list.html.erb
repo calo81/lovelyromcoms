@@ -1,0 +1,5 @@
+Top 10
+
+<% @movie_list.each do |movie| %>
+  <div class="title_in_list"><%= link_to movie.title, edit_movie_path(movie)%></div>
+<% end %>

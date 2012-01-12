@@ -63,10 +63,16 @@ describe Movie do
   end
 
   it "returns a list ordered by title" do
-    movies = Movie.retrieve_sorted_by(:title, 10, 1)
+    movies = Movie.retrieve_sorted_by(:title)
     movies.size.should == 10
     comparison = (movies[0].title <=> movies[1].title)
     comparison.should == -1
+  end
+
+    it "returns a list ordered by some indicator total" do
+    movies = Movie.retrieve_sorted_by("indicators.couple_chemistry.total", :desc)
+    movies.size.should == 10
+    movies[0].indicators["couple_chemistry"]["total"].should >= movies[1].indicators["couple_chemistry"]["total"]
   end
 
 end
