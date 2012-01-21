@@ -13,12 +13,16 @@
   <%= csrf_meta_tag %>
 </head>
 <body>
+<%= link_to "LOVELYROMCOMS", root_path %>
 <nav>
   <% if user_signed_in? %>
       Signed in as <%= current_user.email %>
   <% else %>
       <%= link_to "Sign in", new_user_session_path %>
       <%= link_to "Sign up", new_user_registration_path %>
+  <% end %>
+  <%= admins_only do %>
+      <%= link_to "Movie Edition", admin_movies_path %>
   <% end %>
 </nav>
 <p class="notice"><%= notice %></p>

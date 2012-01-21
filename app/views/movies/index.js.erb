@@ -1,0 +1,6 @@
+    $(function() {
+        jQuery("#movie_list").html("");
+        <%@movie_list.each do |movie|%>
+        jQuery("#movie_list").append('<div class="title_in_list"><%= escape_javascript(link_to movie.title, edit_movie_path(movie)) %></div>');
+        <% end %>
+    });

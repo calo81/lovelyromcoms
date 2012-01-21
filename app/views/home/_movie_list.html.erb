@@ -1,5 +1,11 @@
 Top 10
-
-<% @movie_list.each do |movie| %>
-  <div class="title_in_list"><%= link_to movie.title, edit_movie_path(movie)%></div>
+<%= form_tag(movies_path, :method => :get, :remote => true) do %>
+    <%= select_tag :sort_by, options_for_select(indicators_map) %>
+    <%= hidden_field_tag :layer_to_replace, "movie_list" %>
+    <%= submit_tag "search" %>
 <% end %>
+<div id="movie_list">
+  <% @movie_list.each do |movie| %>
+      <div class="title_in_list"><%= link_to movie.title, edit_movie_path(movie) %></div>
+  <% end %>
+</div>

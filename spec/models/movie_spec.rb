@@ -29,7 +29,7 @@ describe Movie do
     user.id = 12
     movie["indicators"] = {"couple_chemistry"=>{"total"=>4, "reviewers"=>[{"id"=>123, "value"=>4}]}}
     movie.set_indicator_for_user(user, "couple_chemistry", 5)
-    movie["indicators"]["couple_chemistry"]["total"].should == 9
+    movie["indicators"]["couple_chemistry"]["total"].should == 4.5
     movie["indicators"]["couple_chemistry"]["reviewers"][1]["id"].should == 12
     movie["indicators"]["couple_chemistry"]["reviewers"][1]["value"].should == 5
   end
@@ -39,26 +39,26 @@ describe Movie do
     user = User.new
     user.id = 12
     movie["indicators"] = {"couple_chemistry"=>{"total"=>4, "reviewers"=>[{"id"=>123, "value"=>4}]}, "he_handsome"=>{"total"=>4, "reviewers"=>[{"id"=>123, "value"=>4}]}}
-    movie.set_indicators_for_user user, "couple_chemistry"=>5, "he_handsome"=>6
-    movie["indicators"]["couple_chemistry"]["total"].should == 9
-    movie["indicators"]["he_handsome"]["total"].should == 10
+    movie.set_indicators_for_user user, "couple_chemistry"=>6, "he_handsome"=>6
+    movie["indicators"]["couple_chemistry"]["total"].should == 5
+    movie["indicators"]["he_handsome"]["total"].should == 5.0
     movie["indicators"]["couple_chemistry"]["reviewers"][1]["id"].should == 12
-    movie["indicators"]["couple_chemistry"]["reviewers"][1]["value"].should == 5
+    movie["indicators"]["couple_chemistry"]["reviewers"][1]["value"].should == 6
     movie["indicators"]["he_handsome"]["reviewers"][1]["id"].should == 12
     movie["indicators"]["he_handsome"]["reviewers"][1]["value"].should == 6
   end
 
-  it "can set many indicators for user at the same time" do
+  it "can set indicator for user replace if he already set those indicators" do
     movie = Movie.find_by_rotten_id(770680214)
     user = User.new
-    user.id = 12
+    user.id = 123
     movie["indicators"] = {"couple_chemistry"=>{"total"=>4, "reviewers"=>[{"id"=>123, "value"=>4}]}}
     movie.set_indicators_for_user user, "couple_chemistry"=>5, "he_handsome"=>6
-    movie["indicators"]["couple_chemistry"]["total"].should == 9
+    movie["indicators"]["couple_chemistry"]["total"].should == 5
     movie["indicators"]["he_handsome"]["total"].should == 6
-    movie["indicators"]["couple_chemistry"]["reviewers"][1]["id"].should == 12
-    movie["indicators"]["couple_chemistry"]["reviewers"][1]["value"].should == 5
-    movie["indicators"]["he_handsome"]["reviewers"][0]["id"].should == 12
+    movie["indicators"]["couple_chemistry"]["reviewers"][0]["id"].should == 123
+    movie["indicators"]["couple_chemistry"]["reviewers"][0]["value"].should == 5
+    movie["indicators"]["he_handsome"]["reviewers"][0]["id"].should == 123
     movie["indicators"]["he_handsome"]["reviewers"][0]["value"].should == 6
   end
 

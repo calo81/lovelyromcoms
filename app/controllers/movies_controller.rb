@@ -15,7 +15,20 @@ class MoviesController < ApplicationController
   def update
     user = current_user
     @movie= Movie.find(params[:id])
-    @movie.set_indicators_for_user(user,params["movie"]["indicators"])
+    @movie.set_indicators_for_user(user, params["movie"]["indicators"])
     redirect_to edit_movie_path(@movie)
+  end
+
+  def index
+    @movie_list = if (params[:sort_by].nil?)
+                    Movie.retrieve_sorted_by(:title)
+                  else
+                    Movie.retrieve_sorted_by(params[:sort_by].to_sym,:desc)
+                  end
+    @movie_list_json = @movie_list.as_json
+    @movie_list_json.each do |movie|
+     movie["id"]=movie["id"].to_s
+    end
+    @movie_list_json = @movie_list_json.to_json
   end
 end

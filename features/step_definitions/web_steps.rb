@@ -10,6 +10,10 @@ When /^I should see "([^"]+)"$/ do |text|
   page.has_content?(text).should be_true
 end
 
+When /^I should not see "([^"]+)"$/ do |text|
+  page.has_content?(text).should be_false
+end
+
 When /^I should see elements with class "([^"]+)" ([0-9]+) times$/ do |text,times|
   results = all(".#{text}")
   results.size.should == times.to_i

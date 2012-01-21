@@ -5,7 +5,7 @@ class Movie
     all[Random.rand(all.count)]
   end
 
-  def self.retrieve_sorted_by(field, sorti=:asc,elements=10, page=1)
+  def self.retrieve_sorted_by(field, sorti=:asc, elements=10, page=1)
     sort = sorti == :desc ? :desc : :asc
     movies = self.paginate({
                                :order => [[field, sort]],
@@ -13,7 +13,7 @@ class Movie
                                :page => page,
                            })
     movies.each_with_index do |movie, index|
-      movies[index]=self.find(movie.id)
+      movies[index]= self.find(movie.id)
     end
   end
 
@@ -27,14 +27,10 @@ class Movie
     return ""
   end
 
+
   def set_indicator_for_user(user, indicator, value)
-    self.indicators[indicator]["reviewers"]<<{"id"=>user.id, "value"=>value}
-    total = 0
-    self.indicators[indicator]["reviewers"].each do |reviewer|
-      total += reviewer["value"]
-    end
-    self.indicators[indicator]["total"]=total
-    self.save!
+    replace_or_set_indicator(indicator, value, user)
+    set_total_and_save(indicator)
   end
 
   def set_indicators_for_user(user, indicators)
@@ -42,13 +38,27 @@ class Movie
     indicators.each do |indicator_name, indicator_value|
       self.indicators[indicator_name] ||= {}
       self.indicators[indicator_name]["reviewers"] ||= []
-      self.indicators[indicator_name]["reviewers"]<<{"id"=>user.id, "value"=>indicator_value.to_i}
-      total = 0
-      self.indicators[indicator_name]["reviewers"].each do |reviewer|
-        total += reviewer["value"]
-      end
-      self.indicators[indicator_name]["total"]=total
+      replace_or_set_indicator(indicator_name, indicator_value, user)
+      set_total_and_save(indicator_name)
     end
+  end
+
+  private
+
+  def replace_or_set_indicator(indicator_name, indicator_value, user)
+    self.indicators[indicator_name]["reviewers"].delete_if { |reviewer| reviewer["id"]==user.id }
+    self.indicators[indicator_name]["reviewers"]<<{"id"=>user.id, "value"=>indicator_value.to_i}
+  end
+
+  def set_total_and_save(indicator)
+    total = 0
+    elements = 0
+    self.indicators[indicator]["reviewers"].each do |reviewer|
+      total += reviewer["value"]
+      elements += 1
+    end
+    self.indicators[indicator]["total"]=(total.to_f/elements.to_f).to_f
     self.save!
   end
+
 end

@@ -15,8 +15,13 @@ describe MoviesController do
       @controller.instance_variable_get("@movie").should == movie
   end
 
-  it "should return a list of movies by limit as JSON" do
-
+  it "should return a list of movies JSON with id is String" do
+    @controller.index
+    @controller.instance_variable_get("@movie_list_json").should_not be_nil
+    movie_list_json = @controller.instance_variable_get("@movie_list_json")
+    movie_list_json.each do |movie|
+      movie["id"].class.should == String
+    end
   end
 
     it "should update movie with user indicators" do

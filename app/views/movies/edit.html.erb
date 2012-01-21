@@ -1,7 +1,7 @@
 <%=@movie.title%>      <br/><br/><br/>
 <img width="120" height="178" src="<%= @movie.posters['profile'] %>"/><br/><br/><br/>
 <b>Synopsis:</b> &nbsp;<%=@movie.synopsis%>     <br/><br/><br/>
-<b>Trailer:</b> <br/>
+<b>Trailer:</b><br/>
 
 <b>Characteristics:</b>
 <% indicators =  (@movie["indicators"] or {}) %>
