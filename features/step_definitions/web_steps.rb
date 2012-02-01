@@ -33,7 +33,7 @@ When /^user clicks link (["]{1}([a-zA-Z ]+)["]{1})$/ do |all,link|
   click_link(link)
 end
 
-When /^I follow (["]{1}([a-zA-Z ]+)["]{1})$/ do |all,link|
+When /^I follow "([a-zA-Z 0-9]+)"$/ do |link|
   click_link(link)
 end
 
@@ -45,7 +45,7 @@ When /^user fill in ([a-z_]+) with ([a-z_@\.]+)$/ do |id,value|
   fill_in(id, :with => value)
 end
 
-When /^I fill in (["]{1}([a-zA-Z ]+)["]{1}) with (["]{1}([a-zA-Z @\.]+)["]{1})$/ do |full_path,id,full_path2,value|
+When /^I fill in "([a-zA-Z_0-9]+)" with "([a-zA-Z @\.\:\/]+)"$/ do |id,value|
   fill_in(id, :with => value)
 end
 
@@ -63,4 +63,8 @@ end
 
 Then /^the button ([a-z_]+) exists$/ do |id|
   find_button(id)
+end
+
+Then /^show me the page$/ do
+  save_and_open_page
 end

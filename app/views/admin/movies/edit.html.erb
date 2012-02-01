@@ -1,0 +1,6 @@
+<h1><%= @movie.title %></h1>
+<%= form_for [:admin,@movie] do |f|%>
+    <%= f.label "Actor Picture URL" %>
+    <%= f.text_field :abridged_cast, :name => "movie[abridged_cast][0][image]", :id=>"actor_1_url", :value =>@movie.abridged_cast[0]["image"]  %>
+    <%= f.submit %>
+<% end %>
