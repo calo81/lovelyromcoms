@@ -2,6 +2,9 @@ Feature: Home page
   As a user
   I want to access the home page
 
+Background: 
+  Given movie with title "Die hard" is registered
+
 Scenario: Texts visible in home
   Given I am on the homepage
   Then user can see "Top 10" text in the page
@@ -17,4 +20,4 @@ Scenario: I can click in the movie title and go to the movie page
 
 Scenario: I can see a list of movies
   Given I am on the homepage
-  Then I should see elements with class "title_in_list" 10 times
+  Then I should see elements with class "title_in_list" 1 times

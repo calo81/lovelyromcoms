@@ -2,6 +2,10 @@ Feature:
   As a user
   I can access the movie page
 
+Background:
+  Given movie with title "17 again" is registered with id "770680214"
+  Given movie with title "Die Hard" is registered with id "312815364"
+
 Scenario: As a user when on the movie page I can see all the movie information
   Given I am on /movies/770680214/edit
   Then I should see "17 Again"

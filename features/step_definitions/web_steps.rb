@@ -2,25 +2,29 @@ Given /^(?:|I )am on (.+)$/ do |page_name|
   visit path_to(page_name)
 end
 
-When /^user can see (["]{1}([0-9a-zA-Z ]+)["]{1}) text in the page$/ do |text_quoted,text|
+Then /^user can see (["]{1}([0-9a-zA-Z ]+)["]{1}) text in the page$/ do |text_quoted,text|
   page.has_content?(text).should be_true
 end
 
-When /^I should see "([^"]+)"$/ do |text|
+Then /^I should see "([^"]+)"$/ do |text|
   page.has_content?(text).should be_true
 end
 
-When /^I should not see "([^"]+)"$/ do |text|
+Then /^I should see "([^"]+)" in field "([^"]+)"$/ do |value,field|
+   find_field(field).value.should == value
+end
+
+Then /^I should not see "([^"]+)"$/ do |text|
   page.has_content?(text).should be_false
 end
 
-When /^I should see elements with class "([^"]+)" ([0-9]+) times$/ do |text,times|
+Then /^I should see elements with class "([^"]+)" ([0-9]+) times$/ do |text,times|
   results = all(".#{text}")
   results.size.should == times.to_i
 end
 
 
-When /^I should see css "([a-z ]+)" with content "([A-Za-z 0-9]+)"$/ do |css,title|
+Then /^I should see css "([a-z ]+)" with content "([A-Za-z 0-9]+)"$/ do |css,title|
   clean_text = find(css).text.gsub("\n","")
   clean_text.strip.should == title
 end

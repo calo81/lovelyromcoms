@@ -1,6 +1,22 @@
 <h1><%= @movie.title %></h1>
-<%= form_for [:admin,@movie] do |f|%>
-    <%= f.label "Actor Picture URL" %>
-    <%= f.text_field :abridged_cast, :name => "movie[abridged_cast][0][image]", :id=>"actor_1_url", :value =>@movie.abridged_cast[0]["image"]  %>
-    <%= f.submit %>
+<%= form_for [:admin, @movie] do |f| %>
+    <% 2.times do |time| %>
+        <p>
+          <%= f.label "Actor Picture URL" %>
+          <%= f.text_field :abridged_cast, :name => "abridged_cast[#{time}][image]", :id=>"actor_#{time+1}_url", :value =>@movie.abridged_cast[time]["image"] %>
+          <%= image_tag(@movie.abridged_cast[time]["image"], :size => "80x120") %>
+        </p>
+        <p>
+          <%= f.label "Actor Name" %>
+          <%= f.text_field :abridged_cast, :name => "abridged_cast[#{time}][name]", :id=>"actor_#{time+1}_name", :value =>@movie.abridged_cast[time]["name"] %>
+        </p>
+    <% end %>
+    <p>
+      <%= f.label :synopsis %>
+      <%= f.text_area :synopsis %>
+    </p>
+    <p>
+      <%= f.submit %>
+      <%= link_to "Delete Movie", [:admin,@movie],:confirm => 'Are you sure?',:method => :delete %>
+    </p>
 <% end %>

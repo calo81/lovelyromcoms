@@ -1,4 +1,5 @@
 <h1>Movie Administration</h1>
 <% @movies.each do |movie| %>
     <%= link_to movie.title, edit_admin_movie_path(movie) %>
+    <br/>
 <% end %>

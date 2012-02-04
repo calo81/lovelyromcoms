@@ -2,6 +2,8 @@ Feature:
   As a user
   I can login to the app
 
+ Background:
+  Given movie with title "Die hard" is registered
 
   Scenario: Signing up
     Given I am on the homepage

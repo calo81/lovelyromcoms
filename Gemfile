@@ -49,6 +49,7 @@ group :test, :development do
   gem 'launchy'
   gem 'addressable'
   gem 'webrat'
+  gem 'factory_girl'
 end
 group :test do
 
