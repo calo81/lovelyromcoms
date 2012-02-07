@@ -20,4 +20,4 @@ Scenario: I can click in the movie title and go to the movie page
 
 Scenario: I can see a list of movies
   Given I am on the homepage
-  Then I should see elements with class "title_in_list" 1 times
+  Then I should see elements with class "title_in_list" at least 1 times

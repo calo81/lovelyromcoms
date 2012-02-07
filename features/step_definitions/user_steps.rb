@@ -15,6 +15,7 @@ end
 
 Given /I am logged in/ do
   user = User.create! :email => "test@testing.com", :password => "password"
+  user.update_attribute("admin",false)
   user.confirm!
   step "I am on the homepage"
   step 'I follow "Sign in"'

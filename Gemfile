@@ -12,6 +12,7 @@ gem 'devise', '~> 1.4.3'
 gem 'mongoid'
 gem 'email_spec'
 gem 'jquery-rails'
+gem 'rsolr'
 # Use unicorn as the web server
 # gem 'unicorn'
 

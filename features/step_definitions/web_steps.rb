@@ -18,9 +18,9 @@ Then /^I should not see "([^"]+)"$/ do |text|
   page.has_content?(text).should be_false
 end
 
-Then /^I should see elements with class "([^"]+)" ([0-9]+) times$/ do |text,times|
+Then /^I should see elements with class "([^"]+)" at least ([0-9]+) times$/ do |text,times|
   results = all(".#{text}")
-  results.size.should == times.to_i
+  results.size.should >= times.to_i
 end
 
 
@@ -49,7 +49,7 @@ When /^user fill in ([a-z_]+) with ([a-z_@\.]+)$/ do |id,value|
   fill_in(id, :with => value)
 end
 
-When /^I fill in "([a-zA-Z_0-9]+)" with "([a-zA-Z @\.\:\/]+)"$/ do |id,value|
+When /^I fill in "([a-zA-Z_0-9]+)" with "([0-9a-zA-Z @\.\:\/]+)"$/ do |id,value|
   fill_in(id, :with => value)
 end
 
