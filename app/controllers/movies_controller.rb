@@ -31,4 +31,7 @@ class MoviesController < ApplicationController
     end
     @movie_list_json = @movie_list_json.to_json
   end
+
+  def search
+  end
 end

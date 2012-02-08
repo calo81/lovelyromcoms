@@ -1,7 +1,11 @@
 Lovelyromcoms::Application.routes.draw do
 
   devise_for :users
-  resources :movies
+  resources :movies do
+    collection do
+      get :search
+    end
+  end
   namespace :admin do
     resources :movies
   end

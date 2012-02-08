@@ -43,7 +43,7 @@ group :assets do
 end
 
 group :test, :development do
-  gem 'rspec-rails', '~> 2.5'
+  gem 'rspec-rails', '2.7.0'
   gem 'cucumber-rails'
   gem 'capybara'
   gem 'database_cleaner'
