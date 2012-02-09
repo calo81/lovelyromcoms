@@ -33,5 +33,6 @@ class MoviesController < ApplicationController
   end
 
   def search
+    @movie_list = MovieSearcher.search(params[:q])
   end
 end

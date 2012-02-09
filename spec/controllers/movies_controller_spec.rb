@@ -1,5 +1,5 @@
 require 'spec_helper'
-require File.expand_path("../../../lib/libraries/searcher", __FILE__)
+require File.expand_path("../../../lib/searcher", __FILE__)
 
 describe MoviesController do
   before(:each) do
@@ -20,6 +20,7 @@ describe MoviesController do
     @controller.index
     @controller.instance_variable_get("@movie_list_json").should_not be_nil
     movie_list_json = @controller.instance_variable_get("@movie_list_json")
+    movie_list_json = JSON.parse(movie_list_json)
     movie_list_json.each do |movie|
       movie["id"].class.should == String
     end
@@ -39,7 +40,8 @@ describe MoviesController do
   end
 
   it "should allow for searching with full text searching" do
-    Searcher.should_receive(:search).with("Die")
+    MovieSearcher.should_receive(:search).with("Die").and_return([{"title"=>"17 Again", "id"=>"1", "actor"=>["Chandler", "Bruce Almighty"]}])
     get :search, :q=>"Die", :remote=>true
+    @controller.instance_variable_get("@movie_list").should == [{"title"=>"17 Again", "id"=>"1", "actor"=>["Chandler", "Bruce Almighty"]}]
   end
 end

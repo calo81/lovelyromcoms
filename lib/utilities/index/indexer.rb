@@ -1,10 +1,15 @@
 require 'rsolr'
-solr = RSolr.connect :url => 'http://localhost:8983/solr/collection1/'
-#solr.add :title=>"Die Hard", :id=>2, :actor=>["Bruce Willis", "Alan Rickman"], :synopsys => "perfect movie"
-#solr.add :title=>"17 Again", :id=>1, :synopsys=>"The old guy turning young", :actor=>["Chandler","Bruce Almighty"]
+#response = solr.get 'select', :params => {:q => 'actor:almig*'}
+class Indexer
+  def initialize
+    @solr = RSolr.connect :url => 'http://localhost:8983/solr/collection1/'
+  end
 
-#solr.update :data => '<commit/>'
-
-response = solr.get 'select', :params => {:q => 'actor:almig*'}
-
-puts response
+  def index(movies)
+    movies.each do |movie|
+      actors = movie.abridged_cast.map{|actor| actor["name"]}
+      @solr.add :id=>movie.id.to_s, :title=>movie.title, :actor=>actors, :synopsys=>movie.synopsys
+    end
+    @solr.update :data => '<commit/>'
+  end
+end
