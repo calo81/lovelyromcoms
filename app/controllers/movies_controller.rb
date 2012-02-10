@@ -1,3 +1,4 @@
+require "searcher"
 class MoviesController < ApplicationController
   def edit
     @movie= Movie.find(params[:id])
@@ -23,16 +24,22 @@ class MoviesController < ApplicationController
     @movie_list = if (params[:sort_by].nil?)
                     Movie.retrieve_sorted_by(:title)
                   else
-                    Movie.retrieve_sorted_by(params[:sort_by].to_sym,:desc)
+                    Movie.retrieve_sorted_by(params[:sort_by].to_sym, :desc)
                   end
     @movie_list_json = @movie_list.as_json
     @movie_list_json.each do |movie|
-     movie["id"]=movie["id"].to_s
+      movie["id"]=movie["id"].to_s
     end
     @movie_list_json = @movie_list_json.to_json
   end
 
   def search
     @movie_list = MovieSearcher.search(params[:q])
+    to_return = []
+    @movie_list.each do |movie|
+      to_return << "#{movie['title']}:::http://multiplantas.com/wp-content/uploads/2011/04/fresa.jpg" if movie["matched_by"] == :title
+      to_return << "#{movie["actor"][0]}, Actor,  #{movie["title"]}:::http://multiplantas.com/wp-content/uploads/2011/04/fresa.jpg" if movie["matched_by"] == :actor
+    end
+    render :json => to_return
   end
 end

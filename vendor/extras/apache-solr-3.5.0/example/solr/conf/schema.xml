@@ -499,7 +499,8 @@
    <field name="id" type="string" indexed="true" stored="true" required="true" /> 
    <field name="title" type="text_general" indexed="true" stored="true"/>
    <field name="actor" type="text_general" indexed="true" stored="true" multiValued="true"/>
-   <field name="synopsys" type="text_general" indexed="true" stored="false"/>
+   <!-- In our index image_url will be N URLS.. An array where the first is the movie URL and the following the actors URLS -->
+   <field name="image_url" type="text_general" indexed="false" stored="true" multiValued="true"/>
    
  </fields>
 

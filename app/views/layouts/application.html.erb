@@ -10,6 +10,7 @@
   </title>
   <%= stylesheet_link_tag :all %>
   <%= javascript_include_tag :defaults %>
+  <%= javascript_include_tag "jquery","jquery.autocomplete" %>
   <%= csrf_meta_tag %>
 </head>
 <body>
@@ -29,7 +30,31 @@
 
 <p class="alert"><%= alert %></p>
 
+<p style="float: right;">Search: <input type="text" id="search" width="400px"/></p>
+
 <%= yield %>
 
 </body>
+<script>
+  $("#search").autocomplete({
+        url: 'movies/search',
+        showResult: function(value, data) {
+            valueAndUrl = value.split(":::")
+            return '<img src="'+valueAndUrl[1]+'" height="42" width="42"/><span style="color:#000000;background-color: gray; border-style: dashed">' + valueAndUrl[0] + '</span>';
+        },
+        onItemSelect: function(item) {
+            var text = 'You selected <b>' + item.value + '</b>';
+            if (item.data.length) {
+                text += ' <i>' + item.data.join(', ') + '</i>';
+            }
+            $("#last_selected").html(text);
+        },
+        mustMatch: false,
+        maxItemsToShow: 10,
+        selectFirst: false,
+        autoFill: false,
+        selectOnly: true,
+        remoteDataType: 'json'
+    });
+</script>
 </html>
