@@ -44,6 +44,7 @@ end
 
 group :test, :development do
   gem 'rspec-rails', '2.7.0'
+  gem 'rspec-expectations', '2.7.0'
   gem 'cucumber-rails'
   gem 'capybara'
   gem 'database_cleaner'

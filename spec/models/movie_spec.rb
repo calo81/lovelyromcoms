@@ -11,7 +11,7 @@ describe Movie do
     movie = Movie.find_by_rotten_id(770680214)
     movie.should_not be_nil
     p movie
-    movie['title'].should=='17 Again'
+    movie['title'].should=='17 again'
   end
 
   it "finds indicator value for user" do
@@ -64,14 +64,14 @@ describe Movie do
 
   it "returns a list ordered by title" do
     movies = Movie.retrieve_sorted_by(:title)
-    movies.size.should == 10
+    movies.size.should == 3
     comparison = (movies[0].title <=> movies[1].title)
     comparison.should == -1
   end
 
-    it "returns a list ordered by some indicator total" do
+  it "returns a list ordered by some indicator total" do
     movies = Movie.retrieve_sorted_by("indicators.couple_chemistry.total", :desc)
-    movies.size.should == 10
+    movies.size.should == 3
     movies[0].indicators["couple_chemistry"]["total"].should >= movies[1].indicators["couple_chemistry"]["total"]
   end
 

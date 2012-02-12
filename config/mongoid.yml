@@ -4,7 +4,7 @@ development:
 
 test:
   host: localhost
-  database: lovelyromcoms_development
+  database: lovelyromcoms_test
 
 # set these environment variables on your prod server
 production:
