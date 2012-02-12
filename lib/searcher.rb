@@ -5,11 +5,6 @@ class MovieSearcher
     term = term.downcase
     response = @solr.get 'select', :params => {:q => "title:#{term}*"}
     list = response["response"]["docs"]
-    list.each{|movie| movie["matched_by"] = :title}
-    response = @solr.get 'select', :params => {:q => "actor:#{term}*"}
-    list2 = response["response"]["docs"]
-    list2.each{|movie| movie["matched_by"] = :actor}
-    list.concat(list2)
     list
   end
 end

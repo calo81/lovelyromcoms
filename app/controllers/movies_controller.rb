@@ -37,8 +37,7 @@ class MoviesController < ApplicationController
     @movie_list = MovieSearcher.search(params[:q])
     to_return = []
     @movie_list.each do |movie|
-      to_return << "#{movie['title']}:::http://multiplantas.com/wp-content/uploads/2011/04/fresa.jpg" if movie["matched_by"] == :title
-      to_return << "#{movie["actor"][0]}, Actor,  #{movie["title"]}:::http://multiplantas.com/wp-content/uploads/2011/04/fresa.jpg" if movie["matched_by"] == :actor
+      to_return << "#{movie['title']}:::#{movie['poster_url']}:::#{movie['id']}"
     end
     render :json => to_return
   end

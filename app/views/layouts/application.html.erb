@@ -37,22 +37,22 @@
 </body>
 <script>
   $("#search").autocomplete({
-        url: 'movies/search',
+        url: '<%= search_movies_path %>',
         showResult: function(value, data) {
             valueAndUrl = value.split(":::")
-            return '<img src="'+valueAndUrl[1]+'" height="42" width="42"/><span style="color:#000000;background-color: gray; border-style: dashed">' + valueAndUrl[0] + '</span>';
+            return '<img src="'+valueAndUrl[1]+'" height="42" width="42"/><span style="color:#000000;background-color: gray; border-style: dotted">' + valueAndUrl[0] + '</span>';
         },
         onItemSelect: function(item) {
-            var text = 'You selected <b>' + item.value + '</b>';
-            if (item.data.length) {
-                text += ' <i>' + item.data.join(', ') + '</i>';
-            }
-            $("#last_selected").html(text);
+            valueAndUrl = item.value.split(":::");
+            document.location.href =  '/movies/'+valueAndUrl[2]+'/edit'
+        },
+        displayValue:function(value,data){
+          return value.split(":::")[0];
         },
         mustMatch: false,
         maxItemsToShow: 10,
         selectFirst: false,
-        autoFill: false,
+        autoFill: true,
         selectOnly: true,
         remoteDataType: 'json'
     });

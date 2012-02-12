@@ -72,3 +72,15 @@ end
 Then /^show me the page$/ do
   save_and_open_page
 end
+
+Then /^I should see "([^"]*)" within "([^"]*)"$/ do |content, css|
+  within(:css, css) do
+      should have_content(content)
+    end
+end
+
+When /^I follow "([^"]*)" within "([^"]*)"$/ do |link, css|
+   within(:css, css) do
+      click_link(link)
+    end
+end

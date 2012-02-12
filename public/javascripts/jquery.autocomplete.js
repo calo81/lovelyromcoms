@@ -738,7 +738,7 @@
             valueLength = value.length;
             filterLength = filter.length;
             if (lcValue.substr(0, filterLength) === lcFilter) {
-                this.dom.$elem.val(value);
+                this.dom.$elem.val(this.displayValue(value,filter));
                 this.selectRange(filterLength, valueLength);
                 return true;
             }
