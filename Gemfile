@@ -13,6 +13,7 @@ gem 'mongoid'
 gem 'email_spec'
 gem 'jquery-rails'
 gem 'rsolr'
+gem 'sprockets'
 # Use unicorn as the web server
 # gem 'unicorn'
 

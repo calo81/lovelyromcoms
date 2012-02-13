@@ -1,39 +1,48 @@
 <%= form_for(@movie) do |f| %>
     <p>
       <%= f.label "Couple Chemistry" %>
-      <%= f.text_field :indicators, :name => "movie[indicators][couple_chemistry]", :id=>"couple_chemistry", :value=>@movie.indicator_for_user("couple_chemistry",current_user) %>
+      <%= f.text_field :indicators, :name => "movie[indicators][couple_chemistry]", :id=>"couple_chemistry", :value=>@movie.indicator_for_user("couple_chemistry",current_user), :style=>"border:0; color:#000000; font-weight:bold;" %>
+      <div id="slider_couple_chemistry" style="width: 20%"></div>
     </p>
     <p>
       <%= f.label "Her attractiveness" %>
-      <%= f.text_field :indicators, :name => "movie[indicators][she_handsome]", :id=>"she_handsome", :value=>@movie.indicator_for_user("she_handsome",current_user) %>
+      <%= f.text_field :indicators, :name => "movie[indicators][she_handsome]", :id=>"she_handsome", :value=>@movie.indicator_for_user("she_handsome",current_user),:style=>"border:0; color:#000000; font-weight:bold;" %>
+      <div id="slider_she_handsome" style="width: 20%"></div>
     </p>
     <p>
       <%= f.label "His attractivness" %>
-      <%= f.text_field :indicators, :name => "movie[indicators][he_handsome]", :id=>"he_handsome", :value=>@movie.indicator_for_user("he_handsome",current_user) %>
+      <%= f.text_field :indicators, :name => "movie[indicators][he_handsome]", :id=>"he_handsome", :value=>@movie.indicator_for_user("he_handsome",current_user),:style=>"border:0; color:#000000; font-weight:bold;" %>
+      <div id="slider_he_handsome" style="width: 20%"></div>
     </p>
     <p>
       <%= f.label "Location" %>
-      <%= f.text_field :indicators, :name => "movie[indicators][dream_place]", :id=>"dream_place", :value=>@movie.indicator_for_user("dream_place",current_user) %>
+      <%= f.text_field :indicators, :name => "movie[indicators][dream_place]", :id=>"dream_place", :value=>@movie.indicator_for_user("dream_place",current_user),:style=>"border:0; color:#000000; font-weight:bold;" %>
+      <div id="slider_dream_place" style="width: 20%"></div>
     </p>
     <p>
       <%= f.label "Crying factor" %>
-      <%= f.text_field :indicators, :name => "movie[indicators][tear_rate]", :id=>"tear_rate", :value=>@movie.indicator_for_user("tear_rate",current_user) %>
+      <%= f.text_field :indicators, :name => "movie[indicators][tear_rate]", :id=>"tear_rate", :value=>@movie.indicator_for_user("tear_rate",current_user),:style=>"border:0; color:#000000; font-weight:bold;" %>
+      <div id="slider_tear_rate" style="width: 20%"></div>
     </p>
     <p>
       <%= f.label "Happy Ending" %>
-      <%= f.text_field :indicators, :name => "movie[indicators][happy_ending]", :id=>"happy_ending", :value=>@movie.indicator_for_user("happy_ending",current_user) %>
+      <%= f.text_field :indicators, :name => "movie[indicators][happy_ending]", :id=>"happy_ending", :value=>@movie.indicator_for_user("happy_ending",current_user),:style=>"border:0; color:#000000; font-weight:bold;" %>
+      <div id="slider_happy_ending" style="width: 20%"></div>
     </p>
     <p>
       <%= f.label "Fun" %>
-      <%= f.text_field :indicators, :name => "movie[indicators][fun_factor]", :id=>"fun_factor", :value=>@movie.indicator_for_user("fun_factor",current_user) %>
+      <%= f.text_field :indicators, :name => "movie[indicators][fun_factor]", :id=>"fun_factor", :value=>@movie.indicator_for_user("fun_factor",current_user),:style=>"border:0; color:#000000; font-weight:bold;" %>
+      <div id="slider_fun_factor" style="width: 20%"></div>
     </p>
     <p>
       <%= f.label "Like in real life" %>
-      <%= f.text_field :indicators, :name => "movie[indicators][real_life_likely]", :id=>"real_life_likely", :value=>@movie.indicator_for_user("real_life_likely",current_user) %>
+      <%= f.text_field :indicators, :name => "movie[indicators][real_life_likely]", :id=>"real_life_likely", :value=>@movie.indicator_for_user("real_life_likely",current_user),:style=>"border:0; color:#000000; font-weight:bold;" %>
+      <div id="slider_real_life_likely" style="width: 20%"></div>
     </p>
     <p>
       <%= f.label "Love scenes" %>
-      <%= f.text_field :indicators, :name => "movie[indicators][sex_scenes]", :id=>"sex_scenes", :value=>@movie.indicator_for_user("sex_scenes",current_user) %>
+      <%= f.text_field :indicators, :name => "movie[indicators][sex_scenes]", :id=>"sex_scenes", :value=>@movie.indicator_for_user("sex_scenes",current_user),:style=>"border:0; color:#000000; font-weight:bold;" %>
+      <div id="slider_sex_scenes" style="width: 20%"></div>
     </p>
     <p>
       <%= f.label "Why would yo recommend it" %>

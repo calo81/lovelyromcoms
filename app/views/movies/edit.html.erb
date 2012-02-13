@@ -1,5 +1,9 @@
 <%=@movie.title%>      <br/><br/><br/>
 <img width="120" height="178" src="<%= @movie.posters['profile'] %>"/><br/><br/><br/>
+<b><img width="100" height="110" src="<%= @movie.abridged_cast[0]["image"] %>"/></b>
+<b><%= @movie.abridged_cast[0]["name"] %></b>
+<b><img width="100" height="110" src="<%= @movie.abridged_cast[1]["image"] %>"/></b>
+<b><%= @movie.abridged_cast[1]["name"] %></b>      <br/><br/><br/>
 <b>Synopsis:</b> &nbsp;<%=@movie.synopsis%>     <br/><br/><br/>
 <b>Trailer:</b><br/>
 

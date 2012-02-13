@@ -10,6 +10,8 @@ Scenario: As a user when on the movie page I can see all the movie information
   Given I am on /movies/770685555/edit
   Then I should see "17 again"
   And I should see "A successful Los Angeles"
+  And I should see "Violetta Arlak"
+  And I should see "Andrzej Blumenfeld"
 
 
 Scenario: Values for the different measures are shown (- when still not reviewed by anyone)
