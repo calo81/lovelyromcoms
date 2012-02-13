@@ -43,6 +43,19 @@ class Movie
     end
   end
 
+  def avg_score
+    if !indicators or indicators.empty?
+      return 0
+    end
+    total = 0.0
+    count = 0.0
+    indicators.each do |indicator,value|
+      total += value["total"]
+      count += 1
+    end
+    total / count
+  end
+
   private
 
   def replace_or_set_indicator(indicator_name, indicator_value, user)
@@ -60,5 +73,4 @@ class Movie
     self.indicators[indicator]["total"]=(total.to_f/elements.to_f).to_f
     self.save!
   end
-
 end

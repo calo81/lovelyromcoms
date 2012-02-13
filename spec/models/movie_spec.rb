@@ -75,4 +75,15 @@ describe Movie do
     movies[0].indicators["couple_chemistry"]["total"].should >= movies[1].indicators["couple_chemistry"]["total"]
   end
 
+  it "should return average score for all indicators" do
+    movie = Movie.find_by_rotten_id(770680214)
+    user = User.new
+    user.id = 123
+    movie.set_indicators_for_user user, "couple_chemistry"=>5, "he_handsome"=>6
+    user = User.new
+    user.id = 125
+    movie.set_indicators_for_user user, "couple_chemistry"=>2, "he_handsome"=>7
+    movie.avg_score.should == 5
+  end
+
 end

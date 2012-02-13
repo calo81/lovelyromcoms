@@ -7,6 +7,10 @@
 <b>Synopsis:</b> &nbsp;<%=@movie.synopsis%>     <br/><br/><br/>
 <b>Trailer:</b><br/>
 
+ <b>Lovelyromcoms score:  <%= @movie.avg_score %> </b>   <br/><br/>
+ <b>Rotten Tomatoes audience score: <%= @movie.ratings["audience_score"] %></b>   <br/><br/>
+ <b>Rotten Tomatoes critics score: <%= @movie.ratings["critics_score"] %></b>   <br/><br/>
+
 <b>Characteristics:</b>
 <% indicators =  (@movie["indicators"] or {}) %>
 <% couple_chemistry = (indicators["couple_chemistry"] or {}) %>

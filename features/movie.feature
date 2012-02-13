@@ -39,6 +39,9 @@ Scenario: Values for the different measures are shown
  And I should see "Is it a real life likely situation: 5 (1 Reviewers)"
  And I should see "Were the passion scenes good: 3 (1 Reviewers)"
  And I should see css "title" with content "17 again"
+ And I should see "Lovelyromcoms score: 5.33" 
+ And I should see "Rotten Tomatoes critics score: 35" 
+ And I should see "Rotten Tomatoes audience score: 62"
 
 
 Scenario: User cannot set any value  if not logged in
