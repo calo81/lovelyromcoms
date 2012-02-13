@@ -89,6 +89,16 @@ class RottenMovieRetriever
     end
   end
 
+   def update_trailer_url(movie)
+    if movie["links"]["clips"] and !movie["links"]["clips"].empty?
+      url=movie["links"]["clips"]+"?apikey=rrmbqvpbr9ujrf4yu855aczv"
+      curl = Curl::Easy.http_get(url)
+      curl.perform
+      json_hash = ActiveSupport::JSON.decode(curl.body_str)
+      movie["trailer"] = json_hash["clips"][0]["links"]["alternate"]
+    end
+  end
+
   def remove_nil_properties(movie)
     movie.reject! { |k, v| v.nil? }
   end
@@ -105,6 +115,7 @@ class RottenMovieRetriever
       movie["indicators"]== {}
       if movie and movie_is_comedy_romance(movie)
         update_movie_synopsis(movie)
+        update_trailer_url(movie)
         actor1_name = movie['abridged_cast'][0]['name']
         actor2_name = movie['abridged_cast'][1]['name']
         actor1_image = retrieve_actor_image actor1_name

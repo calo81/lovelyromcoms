@@ -4,8 +4,8 @@
 <b><%= @movie.abridged_cast[0]["name"] %></b>
 <b><img width="100" height="110" src="<%= @movie.abridged_cast[1]["image"] %>"/></b>
 <b><%= @movie.abridged_cast[1]["name"] %></b>      <br/><br/><br/>
-<b>Synopsis:</b> &nbsp;<%=@movie.synopsis%>     <br/><br/><br/>
-<b>Trailer:</b><br/>
+<b>Synopsis:</b> &nbsp;<%= @movie.synopsis_if_existent %>     <br/><br/><br/>
+<b>Trailer:</b>&nbsp;<%= link_to "See Trailer", @movie.trailer_if_existent, :target => '_blank' %><br/>
 
  <b>Lovelyromcoms score:  <%= @movie.avg_score %> </b>   <br/><br/>
  <b>Rotten Tomatoes audience score: <%= @movie.ratings["audience_score"] %></b>   <br/><br/>

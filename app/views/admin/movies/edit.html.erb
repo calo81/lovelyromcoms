@@ -13,7 +13,11 @@
     <% end %>
     <p>
       <%= f.label :synopsis %>
-      <%= f.text_area :synopsis %>
+      <%= f.text_area :synopsis, :value => @movie.synopsis_if_existent %>
+    </p>
+    <p>
+      <%= f.label :trailer %>
+      <%= f.text_area :trailer, :value => @movie.trailer_if_existent %>
     </p>
     <p>
       <%= f.submit %>

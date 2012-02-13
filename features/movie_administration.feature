@@ -98,6 +98,21 @@ Feature: As an admin
     And I follow "10 Things I Hate About You"
     Then I should see "Que peliculon" in field "movie_synopsis"
 
+   Scenario: I can  change  the movie trailer url
+    Given there are the following confirmed users:
+      | email              | password | admin |
+      | admin@ticketee.com | password | true  |
+    And I am signed in as them
+    Given I am on the homepage
+    When I follow "Movie Edition"
+    And I follow "10 Things I Hate About You"
+    And I fill in "movie_trailer" with "http://trailer.com"
+    And  I press "Update Movie"
+    Then I should see "Movie Updated"
+    When I follow "Movie Edition"
+    And I follow "10 Things I Hate About You"
+    Then I should see "http://trailer.com" in field "movie_trailer"
+
   Scenario: I can delete the movie
     Given there are the following confirmed users:
       | email              | password | admin |

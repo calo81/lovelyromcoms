@@ -1,6 +1,6 @@
 class Admin::MoviesController < ApplicationController
   def index
-    @movies = Movie.retrieve_sorted_by("title", :asc)
+    @movies = Movie.retrieve_sorted_by("title", :asc,200)
   end
 
   def edit

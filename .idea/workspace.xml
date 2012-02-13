@@ -2,21 +2,201 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="99cc747c-0f17-4e2c-813f-c67361214f17" name="Default" comment="Movie retriever, hadoop task, and starting work on home page">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/extras/apache-solr-3.5.0/example/solr/data/index/_1c.fdt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/extras/apache-solr-3.5.0/example/solr/data/index/_1c.fdx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/extras/apache-solr-3.5.0/example/solr/data/index/_1c.fnm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/extras/apache-solr-3.5.0/example/solr/data/index/_1c.frq" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/extras/apache-solr-3.5.0/example/solr/data/index/_1c.nrm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/extras/apache-solr-3.5.0/example/solr/data/index/_1c.prx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/extras/apache-solr-3.5.0/example/solr/data/index/_1c.tii" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/extras/apache-solr-3.5.0/example/solr/data/index/_1c.tis" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/extras/apache-solr-3.5.0/example/solr/data/index/segments_1e" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/10041" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/10090" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/10180" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/10192" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/10292" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/10321" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/10419" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/10421" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/10442" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/10561" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/10810" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/10820" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/10853" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/10916" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/1121" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/11425" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/11629" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/11708" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/11738" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/11743" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/11940" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/12112" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/12284" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/12364" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/12475" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/12852" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/13007" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/13020" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/13536" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/13657" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/13672" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/13837" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/13850" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/13974" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/14135" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/14136" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/14561" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/14617" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/14662879" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/14675" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/14774" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/14782" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/15741" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/15912" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/160593686" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/16188" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/16812" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/17345" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/17634" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/18658" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/18694" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/18707" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/18796" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/19406" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/21296" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/22132" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/22246" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/24475" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/24489" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/26" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/312815364" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/343953787" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/353666702" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/376804542" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/426554592" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/465651939" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/506764961" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/518744132" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/548220974" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/559550548" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/585856351" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/594111615" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/603147388" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/646929264" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/695231681" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/751156961" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/770092795" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/770669912" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/770670208" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/770670839" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/770671315" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/770671360" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/770671440" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/770671922" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/770672626" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/770672682" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/770672853" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/770674718" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/770676561" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/770676850" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/770677390" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/770677976" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/770680100" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/770680121" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/770680214" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/770680321" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/770680567" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/770681028" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/770681811" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/770681830" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/770681984" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/770683769" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/770684242" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/770684787" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/770685017" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/770686560" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/770686831" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/770694191" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/770696011" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/770701682" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/770707123" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/770711300" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/770714907" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/770719413" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/770722576" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/770728390" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/770728829" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/770728878" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/770732510" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/770738027" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/770738748" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/770739520" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/770745503" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/770768699" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/770783454" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/770783506" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/770784045" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/770784718" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/770790153" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/770792795" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/770792850" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/770793217" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/770795747" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/770797570" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/770798957" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/770799005" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/770800101" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/770800369" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/770800527" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/770802394" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/770802622" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/770803249" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/770804903" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/770806881" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/770808575" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/770811113" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/770811114" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/770811770" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/770811858" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/770814371" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/770814941" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/770816452" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/770817154" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/770818754" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/770819130" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/770825417" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/770859257" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/770875871" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/770899344" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/770906373" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/771033676" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/771041182" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/771173511" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/771206032" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/771208097" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/771211113" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/771218519" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/771224742" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/771236434" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/771239244" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/771241364" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/771242835" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/771246719" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/771248497" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/9185" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/9363" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/9564" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/extras/apache-solr-3.5.0/example/solr/data/index/_1m.fdt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/extras/apache-solr-3.5.0/example/solr/data/index/_1m.fdx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/extras/apache-solr-3.5.0/example/solr/data/index/_1m.fnm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/extras/apache-solr-3.5.0/example/solr/data/index/_1m.frq" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/extras/apache-solr-3.5.0/example/solr/data/index/_1m.nrm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/extras/apache-solr-3.5.0/example/solr/data/index/_1m.prx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/extras/apache-solr-3.5.0/example/solr/data/index/_1m.tii" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/extras/apache-solr-3.5.0/example/solr/data/index/_1m.tis" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/extras/apache-solr-3.5.0/example/solr/data/index/segments_1o" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/extras/apache-solr-3.5.0/example/solr/data/index/segments.gen" afterPath="$PROJECT_DIR$/vendor/extras/apache-solr-3.5.0/example/solr/data/index/segments.gen" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/admin/movies_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/admin/movies_controller.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/movie.rb" afterPath="$PROJECT_DIR$/app/models/movie.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/admin/movies/edit.html.erb" afterPath="$PROJECT_DIR$/app/views/admin/movies/edit.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/application.html.erb" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/movies/edit.html.erb" afterPath="$PROJECT_DIR$/app/views/movies/edit.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/features/movie.feature" afterPath="$PROJECT_DIR$/features/movie.feature" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/features/step_definitions/db_steps.rb" afterPath="$PROJECT_DIR$/features/step_definitions/db_steps.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spec/models/movie_spec.rb" afterPath="$PROJECT_DIR$/spec/models/movie_spec.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/features/movie_administration.feature" afterPath="$PROJECT_DIR$/features/movie_administration.feature" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/utilities/rotten_movie_retriever.rb" afterPath="$PROJECT_DIR$/lib/utilities/rotten_movie_retriever.rb" />
     </list>
     <ignored path="lovelyromcoms.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -42,61 +222,70 @@
       <file leaf-file-name="edit.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/movies/edit.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="46" selection-start="540" selection-end="540" vertical-scroll-proportion="-5.625">
+            <state line="7" column="95" selection-start="581" selection-end="581" vertical-scroll-proportion="-4.375">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="movie_spec.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/spec/models/movie_spec.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="85" column="31" selection-start="3718" selection-end="3718" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="movie.rb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="movie.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/models/movie.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="55" column="0" selection-start="1518" selection-end="1518" vertical-scroll-proportion="0.33333334">
+            <state line="69" column="20" selection-start="1753" selection-end="1753" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="seeds.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/db/seeds.rb">
+      <file leaf-file-name="application.html.erb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="0" selection-start="4700" selection-end="4700" vertical-scroll-proportion="0.0">
+            <state line="20" column="68" selection-start="558" selection-end="558" vertical-scroll-proportion="-7.5">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="indexer.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/utilities/index/indexer.rb">
+      <file leaf-file-name="movies_controller.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/admin/movies_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="0" selection-start="242" selection-end="242" vertical-scroll-proportion="0.0">
+            <state line="12" column="0" selection-start="281" selection-end="281" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="movies.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/assets/javascripts/movies.js">
+      <file leaf-file-name="rotten_movie_retriever.rb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/lib/utilities/rotten_movie_retriever.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="45" selection-start="0" selection-end="426" vertical-scroll-proportion="0.0">
+            <state line="93" column="22" selection-start="2951" selection-end="2951" vertical-scroll-proportion="1.821192">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="behaviours.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/javascripts/behaviours.js">
+      <file leaf-file-name="770680214" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/utilities/movies/770680214">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="35" selection-start="462" selection-end="462" vertical-scroll-proportion="0.0">
+            <state line="0" column="2298" selection-start="2291" selection-end="2298" vertical-scroll-proportion="-0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="506764961" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/utilities/movies/506764961">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="2017" selection-start="2017" selection-end="2079" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="movie_administration.feature" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/features/movie_administration.feature">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="113" column="59" selection-start="4442" selection-end="4442" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -111,19 +300,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="db_steps.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/features/step_definitions/db_steps.rb">
+      <file leaf-file-name="edit.html.erb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/admin/movies/edit.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="287" selection-start="2904" selection-end="2918" vertical-scroll-proportion="-8.923077">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="10041" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/utilities/movies/10041">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+            <state line="19" column="68" selection-start="876" selection-end="876" vertical-scroll-proportion="-11.875">
               <folding />
             </state>
           </provider>
@@ -143,22 +323,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/spec/spec_helper.rb" />
-        <option value="$PROJECT_DIR$/config/mongoid.yml" />
-        <option value="$PROJECT_DIR$/config/initializers/mongo.rb" />
-        <option value="$PROJECT_DIR$/features/support/env.rb" />
-        <option value="$PROJECT_DIR$/db/seeds.rb" />
         <option value="$PROJECT_DIR$/features/search.feature" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/movies.js" />
         <option value="$PROJECT_DIR$/Gemfile" />
-        <option value="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
         <option value="$PROJECT_DIR$/app/views/movies/_form.html.erb" />
         <option value="$PROJECT_DIR$/public/javascripts/behaviours.js" />
         <option value="$PROJECT_DIR$/features/step_definitions/db_steps.rb" />
         <option value="$PROJECT_DIR$/features/movie.feature" />
-        <option value="$PROJECT_DIR$/app/views/movies/edit.html.erb" />
         <option value="$PROJECT_DIR$/spec/models/movie_spec.rb" />
+        <option value="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
+        <option value="$PROJECT_DIR$/app/controllers/admin/movies_controller.rb" />
+        <option value="$PROJECT_DIR$/lib/utilities/rotten_movie_retriever.rb" />
+        <option value="$PROJECT_DIR$/lib/utilities/movies/506764961" />
+        <option value="$PROJECT_DIR$/app/views/admin/movies/edit.html.erb" />
         <option value="$PROJECT_DIR$/app/models/movie.rb" />
+        <option value="$PROJECT_DIR$/features/movie_administration.feature" />
+        <option value="$PROJECT_DIR$/app/views/movies/edit.html.erb" />
       </list>
     </option>
   </component>
@@ -427,6 +607,60 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lovelyromcoms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lovelyromcoms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="utilities" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lovelyromcoms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lovelyromcoms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="utilities" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="movies" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lovelyromcoms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lovelyromcoms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="features" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -590,6 +824,54 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="home" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lovelyromcoms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lovelyromcoms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lovelyromcoms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lovelyromcoms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="movies" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -778,27 +1060,7 @@
       <recent name="$PROJECT_DIR$/vendor/extras/mongodb" />
     </key>
   </component>
-  <component name="RunManager" selected="Cucumber.Values for the different measures are shown">
-    <configuration default="false" name="seeds" type="RubyRunConfigurationType" factoryName="Ruby" temporary="true">
-      <module name="lovelyromcoms" />
-      <RUBY_RUN_CONFIG NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
-      <RUBY_RUN_CONFIG NAME="WORK DIR" VALUE="$PROJECT_DIR$/db" />
-      <RUBY_RUN_CONFIG NAME="SHOULD_USE_SDK" VALUE="false" />
-      <RUBY_RUN_CONFIG NAME="ALTERN_SDK_NAME" VALUE="" />
-      <RUBY_RUN_CONFIG NAME="myPassParentEnvs" VALUE="true" />
-      <envs />
-      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
-      <EXTENSION ID="RubyCoverageRunConfigurationExtension" enabled="false" track_test_folders="true" runner="rcov">
-        <COVERAGE_PATTERN ENABLED="true">
-          <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
-        </COVERAGE_PATTERN>
-      </EXTENSION>
-      <RUBY_RUN_CONFIG NAME="SCRIPT_PATH" VALUE="$PROJECT_DIR$/db/seeds.rb" />
-      <RUBY_RUN_CONFIG NAME="SCRIPT_ARGS" VALUE="" />
-      <RunnerSettings RunnerId="RubyDebugRunner" />
-      <ConfigurationWrapper RunnerId="RubyDebugRunner" />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="Cucumber.movie_administration">
     <configuration default="false" name="movie" type="CucumberRunConfigurationType" factoryName="Cucumber" temporary="true">
       <predefined_log_file id="RUBY_CUCUMBER" enabled="true" />
       <module name="lovelyromcoms" />
@@ -938,6 +1200,28 @@
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="USE_CUSTOM_SPEC_RUNNER" VALUE="false" />
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="DRB" VALUE="false" />
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="FULL_BACKTRACE" VALUE="false" />
+      <RunnerSettings RunnerId="RubyDebugRunner" />
+      <RunnerSettings RunnerId="RubyRunner" />
+      <ConfigurationWrapper RunnerId="RubyDebugRunner" />
+      <ConfigurationWrapper RunnerId="RubyRunner" />
+      <method />
+    </configuration>
+    <configuration default="false" name="rotten_movie_retriever" type="RubyRunConfigurationType" factoryName="Ruby" temporary="true">
+      <module name="lovelyromcoms" />
+      <RUBY_RUN_CONFIG NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
+      <RUBY_RUN_CONFIG NAME="WORK DIR" VALUE="$PROJECT_DIR$/lib/utilities" />
+      <RUBY_RUN_CONFIG NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RUBY_RUN_CONFIG NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RUBY_RUN_CONFIG NAME="myPassParentEnvs" VALUE="true" />
+      <envs />
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" enabled="false" track_test_folders="true" runner="rcov">
+        <COVERAGE_PATTERN ENABLED="true">
+          <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
+        </COVERAGE_PATTERN>
+      </EXTENSION>
+      <RUBY_RUN_CONFIG NAME="SCRIPT_PATH" VALUE="$PROJECT_DIR$/lib/utilities/rotten_movie_retriever.rb" />
+      <RUBY_RUN_CONFIG NAME="SCRIPT_ARGS" VALUE="" />
       <RunnerSettings RunnerId="RubyDebugRunner" />
       <RunnerSettings RunnerId="RubyRunner" />
       <ConfigurationWrapper RunnerId="RubyDebugRunner" />
@@ -1201,11 +1485,11 @@
       <item index="1" class="java.lang.String" itemvalue="Rails.Production: lovelyromcoms" />
       <item index="2" class="java.lang.String" itemvalue="Rake.spec" />
       <item index="3" class="java.lang.String" itemvalue="Rake.test" />
-      <item index="4" class="java.lang.String" itemvalue="Ruby.seeds" />
-      <item index="5" class="java.lang.String" itemvalue="Cucumber.movie" />
-      <item index="6" class="java.lang.String" itemvalue="Cucumber.movie_administration" />
-      <item index="7" class="java.lang.String" itemvalue="Cucumber.Values for the different measures are shown" />
-      <item index="8" class="java.lang.String" itemvalue="RSpec.Movie should return average score for all indicators" />
+      <item index="4" class="java.lang.String" itemvalue="Cucumber.movie" />
+      <item index="5" class="java.lang.String" itemvalue="Cucumber.movie_administration" />
+      <item index="6" class="java.lang.String" itemvalue="Cucumber.Values for the different measures are shown" />
+      <item index="7" class="java.lang.String" itemvalue="RSpec.Movie should return average score for all indicators" />
+      <item index="8" class="java.lang.String" itemvalue="Ruby.rotten_movie_retriever" />
     </list>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
@@ -1237,20 +1521,20 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1440" height="805" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32819074" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32768363" sideWeight="0.7377279" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2622721" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27769986" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32768363" sideWeight="0.7223001" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2622721" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27769986" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32857144" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3294964" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -1311,10 +1595,6 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="ruby-line">
-          <url>file://$PROJECT_DIR$/app/controllers/admin/movies_controller.rb</url>
-          <line>26</line>
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="ruby-line">
           <url>file://$PROJECT_DIR$/spec/controllers/movies_controller_spec.rb</url>
           <line>23</line>
         </line-breakpoint>
@@ -1330,6 +1610,14 @@
           <url>file://$PROJECT_DIR$/app/models/movie.rb</url>
           <line>55</line>
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="ruby-line">
+          <url>file://$PROJECT_DIR$/lib/utilities/rotten_movie_retriever.rb</url>
+          <line>96</line>
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="ruby-line">
+          <url>file://$PROJECT_DIR$/lib/utilities/rotten_movie_retriever.rb</url>
+          <line>92</line>
+        </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/public/javascripts/jquery.autocomplete.js</url>
           <line>504</line>
@@ -1338,69 +1626,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Gemfile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="14" selection-start="285" selection-end="285" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/javascripts/application.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/stylesheets/jquery-ui-1.8.17.custom.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="447" column="19" selection-start="26463" selection-end="26469" vertical-scroll-proportion="-5.4615383">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="66" selection-start="292" selection-end="292" vertical-scroll-proportion="12.5">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/javascripts/jquery-ui-1.8.17.custom.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="223" column="279" selection-start="194542" selection-end="194545" vertical-scroll-proportion="-96.34615">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/movies/_form.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="106" selection-start="2507" selection-end="2523" vertical-scroll-proportion="-23.75">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/javascripts/behaviours.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="35" selection-start="462" selection-end="462" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/utilities/movies/10041">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/features/step_definitions/db_steps.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="287" selection-start="2904" selection-end="2918" vertical-scroll-proportion="-8.923077">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/db/seeds.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="26" column="0" selection-start="4700" selection-end="4700" vertical-scroll-proportion="0.0">
@@ -1429,9 +1654,65 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/movies/edit.html.erb">
+    <entry file="file://$PROJECT_DIR$/app/views/home/index.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="46" selection-start="540" selection-end="540" vertical-scroll-proportion="-5.625">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/home/_movie_of_the_day.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="68" selection-start="558" selection-end="558" vertical-scroll-proportion="-7.5">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/admin/movies_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="0" selection-start="281" selection-end="281" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/utilities/movies/770680214">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="2298" selection-start="2291" selection-end="2298" vertical-scroll-proportion="-0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/utilities/movies/506764961">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="2017" selection-start="2017" selection-end="2079" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/admin/movies/edit.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="68" selection-start="876" selection-end="876" vertical-scroll-proportion="-11.875">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/movie.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="69" column="20" selection-start="1753" selection-end="1753" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/features/movie_administration.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="113" column="59" selection-start="4442" selection-end="4442" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -1443,9 +1724,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/movie.rb">
+    <entry file="file://$PROJECT_DIR$/app/views/movies/edit.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="55" column="0" selection-start="1518" selection-end="1518" vertical-scroll-proportion="0.33333334">
+        <state line="7" column="95" selection-start="581" selection-end="581" vertical-scroll-proportion="-4.375">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/utilities/rotten_movie_retriever.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="93" column="22" selection-start="2951" selection-end="2951" vertical-scroll-proportion="1.821192">
           <folding />
         </state>
       </provider>

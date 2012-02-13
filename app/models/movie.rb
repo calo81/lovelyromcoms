@@ -53,7 +53,24 @@ class Movie
       total += value["total"]
       count += 1
     end
-    total / count
+    total_double = total / count
+    (total_double*100).to_i / 100.0
+  end
+
+  def synopsis_if_existent
+    begin
+      return synopsis
+    rescue
+      return ""
+    end
+  end
+
+    def trailer_if_existent
+    begin
+      return trailer
+    rescue
+      return ""
+    end
   end
 
   private
