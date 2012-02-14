@@ -61,7 +61,6 @@ Scenario: User cannot set any value  if not logged in
 Scenario: User can set values  if logged in
   Given I am logged in
   When I update the movie 770685555 with indicators '{"couple_chemistry":{"total":4,"reviewers":[{"id":123,"value":4}]},"he_handsome":{"total":6,"reviewers":[{"id":123,"value":6}]},"she_handsome":{"total":8,"reviewers":[{"id":123,"value":8}]},"dream_place":{"total":5,"reviewers":[{"id":123,"value":5}]},"tear_rate":{"total":3,"reviewers":[{"id":123,"value":3}]},"happy_ending":{"total":9,"reviewers":[{"id":123,"value":9}]},"fun_factor":{"total":5,"reviewers":[{"id":123,"value":5}]},"real_life_likely":{"total":5,"reviewers":[{"id":123,"value":5}]},"sex_scenes":{"total":3,"reviewers":[{"id":123,"value":3}]}}'
-  When I update the movie 770685555 field recomendations with '[]'
   And I am on /movies/770685555/edit
   Then the field couple_chemistry exist
   And the field he_handsome exist
@@ -73,3 +72,10 @@ Scenario: User can set values  if logged in
   And the field real_life_likely exist
   And the field sex_scenes exist
   And the field why_would_you_recommend_it exist
+
+Scenario: User reviews are show in page
+  Given I am logged in
+  When I update the movie 770685555 with indicators '{"couple_chemistry":{"total":4,"reviewers":[{"id":123,"value":4}]},"he_handsome":{"total":6,"reviewers":[{"id":123,"value":6}]},"she_handsome":{"total":8,"reviewers":[{"id":123,"value":8}]},"dream_place":{"total":5,"reviewers":[{"id":123,"value":5}]},"tear_rate":{"total":3,"reviewers":[{"id":123,"value":3}]},"happy_ending":{"total":9,"reviewers":[{"id":123,"value":9}]},"fun_factor":{"total":5,"reviewers":[{"id":123,"value":5}]},"real_life_likely":{"total":5,"reviewers":[{"id":123,"value":5}]},"sex_scenes":{"total":3,"reviewers":[{"id":123,"value":3}]}}'
+  And I am on /movies/770685555/edit
+  Then I should see "Users Reviews"
+

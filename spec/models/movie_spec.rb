@@ -92,16 +92,16 @@ describe Movie do
     movie = Movie.find_by_rotten_id(770680214)
     user = User.new
     user.id = 123
-    movie.set_review_for_user user, "This was a great movie"
+    movie.set_review_for_user user, "text"=>"This was a great movie",:score=>9
     user = User.new
     user.id = 125
-    movie.set_review_for_user user, "I think it was crap"
+    movie.set_review_for_user user, "text"=>"I think it was crap",:score=>2
     movie.reviews.size.should == 2
     movie.reviews[0]["user_id"].should == 123
     movie.reviews[1]["user_id"].should == 125
-    movie.reviews[0]["review"].should == "This was a great movie"
-    movie.reviews[1]["review"].should == "I think it was crap"
-    movie.review_for_user(user).should ==  "I think it was crap"
+    movie.reviews[0]["review"]["text"].should == "This was a great movie"
+    movie.reviews[1]["review"]["text"].should == "I think it was crap"
+    movie.review_for_user(user).should ==  {"text"=>"I think it was crap",:score=>2}
   end
 
 end

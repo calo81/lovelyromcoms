@@ -50,7 +50,7 @@ class Movie
     end
     total = 0.0
     count = 0.0
-    indicators.each do |indicator,value|
+    indicators.each do |indicator, value|
       total += value["total"]
       count += 1
     end
@@ -66,20 +66,24 @@ class Movie
     end
   end
 
-    def trailer_if_existent
+  def trailer_if_existent
     begin
       return trailer
     rescue
       return ""
     end
-    end
+  end
 
-  def set_review_for_user(user,review)
+  def reviews_if_existent
+    return self["reviews"] ? self["reviews"] : []
+  end
+
+  def set_review_for_user(user, review)
     self["reviews"] ||= []
     self["reviews"].delete_if do |review|
       review["user_id"]==user.id
     end
-    self["reviews"] << {"user_id"=>user.id,"review"=>review}
+    self["reviews"] << {"user_id"=>user.id, "review"=>review}
   end
 
   def review_for_user(user)

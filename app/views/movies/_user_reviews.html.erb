@@ -1,0 +1,23 @@
+<b>Users Reviews</b>
+<%@movie.reviews_if_existent.each_with_index do |review,i| %>
+    <p>
+      <input name="review<%= i %>" type="radio" class="disabledstar" value="1" disabled="disabled"/>
+      <input name="review<%= i %>" type="radio" class="disabledstar" value="2" disabled="disabled"/>
+      <input name="review<%= i %>" type="radio" class="disabledstar" value="3" disabled="disabled"/>
+      <input name="review<%= i %>" type="radio" class="disabledstar" value="4" disabled="disabled"/>
+      <input name="review<%= i %>" type="radio" class="disabledstar" value="5" disabled="disabled"/>
+      <input name="review<%= i %>" type="radio" class="disabledstar" value="6" disabled="disabled"/>
+      <input name="review<%= i %>" type="radio" class="disabledstar" value="7" disabled="disabled"/>
+      <input name="review<%= i %>" type="radio" class="disabledstar" value="8" disabled="disabled"/>
+      <input name="review<%= i %>" type="radio" class="disabledstar" value="9" disabled="disabled"/>
+      <input name="review<%= i %>" type="radio" class="disabledstar" value="10" disabled="disabled"/>
+    </p>
+    <p><%= review["review"]["text"] %></p>
+    <p>By: <%= User.find(review["user_id"]).email %></p>
+    <script>
+    $(function() {
+        $('input[name=review<%= i %>].disabledstar:eq(<%= review["review"]["score"].to_i - 1 %>)').attr('checked', 'checked');
+        $('input[name=review<%= i %>].disabledstar').rating();
+    });
+</script>
+<% end %>
