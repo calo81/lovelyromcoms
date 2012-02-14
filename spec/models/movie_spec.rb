@@ -77,6 +77,8 @@ describe Movie do
 
   it "should return average score for all indicators" do
     movie = Movie.find_by_rotten_id(770680214)
+    movie.indicators = {}
+    movie.save!
     user = User.new
     user.id = 123
     movie.set_indicators_for_user user, "couple_chemistry"=>5, "he_handsome"=>6
@@ -84,6 +86,22 @@ describe Movie do
     user.id = 125
     movie.set_indicators_for_user user, "couple_chemistry"=>2, "he_handsome"=>7
     movie.avg_score.should == 5
+  end
+
+  it "should allow to add review per user" do
+    movie = Movie.find_by_rotten_id(770680214)
+    user = User.new
+    user.id = 123
+    movie.set_review_for_user user, "This was a great movie"
+    user = User.new
+    user.id = 125
+    movie.set_review_for_user user, "I think it was crap"
+    movie.reviews.size.should == 2
+    movie.reviews[0]["user_id"].should == 123
+    movie.reviews[1]["user_id"].should == 125
+    movie.reviews[0]["review"].should == "This was a great movie"
+    movie.reviews[1]["review"].should == "I think it was crap"
+    movie.review_for_user(user).should ==  "I think it was crap"
   end
 
 end

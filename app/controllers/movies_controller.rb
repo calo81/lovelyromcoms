@@ -17,6 +17,8 @@ class MoviesController < ApplicationController
     user = current_user
     @movie= Movie.find(params[:id])
     @movie.set_indicators_for_user(user, params["movie"]["indicators"])
+    @movie.set_review_for_user(user,params["movie"]["review"])
+    @movie.save!
     redirect_to edit_movie_path(@movie)
   end
 

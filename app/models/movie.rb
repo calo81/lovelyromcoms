@@ -30,16 +30,17 @@ class Movie
 
   def set_indicator_for_user(user, indicator, value)
     replace_or_set_indicator(indicator, value, user)
-    set_total_and_save(indicator)
+    set_total_for_indicator(indicator)
   end
 
   def set_indicators_for_user(user, indicators)
     self["indicators"] ||= {}
     indicators.each do |indicator_name, indicator_value|
+      next if indicator_value.to_i == 0
       self.indicators[indicator_name] ||= {}
       self.indicators[indicator_name]["reviewers"] ||= []
       replace_or_set_indicator(indicator_name, indicator_value, user)
-      set_total_and_save(indicator_name)
+      set_total_for_indicator(indicator_name)
     end
   end
 
@@ -71,6 +72,24 @@ class Movie
     rescue
       return ""
     end
+    end
+
+  def set_review_for_user(user,review)
+    self["reviews"] ||= []
+    self["reviews"].delete_if do |review|
+      review["user_id"]==user.id
+    end
+    self["reviews"] << {"user_id"=>user.id,"review"=>review}
+  end
+
+  def review_for_user(user)
+    self["reviews"] ||= []
+    self["reviews"].each do |review|
+      if review["user_id"]==user.id
+        return review["review"]
+      end
+    end
+    return ""
   end
 
   private
@@ -80,7 +99,7 @@ class Movie
     self.indicators[indicator_name]["reviewers"]<<{"id"=>user.id, "value"=>indicator_value.to_i}
   end
 
-  def set_total_and_save(indicator)
+  def set_total_for_indicator(indicator)
     total = 0
     elements = 0
     self.indicators[indicator]["reviewers"].each do |reviewer|
