@@ -2,85 +2,54 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="99cc747c-0f17-4e2c-813f-c67361214f17" name="Default" comment="Movie retriever, hadoop task, and starting work on home page">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/homepage01.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/homepage02.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/homepage03.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/homepage04.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/homepage05.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/homepage06.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/homepage07.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/homepage08.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/homepage09.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/homepage10.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/homepage11.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/homepage12.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/homepage13.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/homepage14.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/homepage15.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/homepage16.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/homepage17.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/homepage18.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/homepage19.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/homepage20.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/homepage21.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/spacer.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/subpage1_01.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/subpage2_01.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/subpage2_02.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/home/_recommendations.html.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/layouts/template.html.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/stylesheets/from-template.css" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/extras/apache-solr-3.5.0/example/solr/data/index/_12.fdt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/extras/apache-solr-3.5.0/example/solr/data/index/_12.fdx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/extras/apache-solr-3.5.0/example/solr/data/index/_12.fnm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/extras/apache-solr-3.5.0/example/solr/data/index/_12.frq" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/extras/apache-solr-3.5.0/example/solr/data/index/_12.nrm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/extras/apache-solr-3.5.0/example/solr/data/index/_12.prx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/extras/apache-solr-3.5.0/example/solr/data/index/_12.tii" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/extras/apache-solr-3.5.0/example/solr/data/index/_12.tis" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/extras/apache-solr-3.5.0/example/solr/data/index/_13.fdt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/extras/apache-solr-3.5.0/example/solr/data/index/_13.fdx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/extras/apache-solr-3.5.0/example/solr/data/index/_13.fnm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/extras/apache-solr-3.5.0/example/solr/data/index/_13.frq" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/extras/apache-solr-3.5.0/example/solr/data/index/_13.nrm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/extras/apache-solr-3.5.0/example/solr/data/index/_13.prx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/extras/apache-solr-3.5.0/example/solr/data/index/_13.tii" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/extras/apache-solr-3.5.0/example/solr/data/index/_13.tis" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/extras/apache-solr-3.5.0/example/solr/data/index/_1n.fdt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/extras/apache-solr-3.5.0/example/solr/data/index/_1n.fdx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/extras/apache-solr-3.5.0/example/solr/data/index/_1n.fnm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/extras/apache-solr-3.5.0/example/solr/data/index/_1n.frq" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/extras/apache-solr-3.5.0/example/solr/data/index/_1n.nrm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/extras/apache-solr-3.5.0/example/solr/data/index/_1n.prx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/extras/apache-solr-3.5.0/example/solr/data/index/_1n.tii" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/extras/apache-solr-3.5.0/example/solr/data/index/_1n.tis" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/extras/apache-solr-3.5.0/example/solr/data/index/_2e.fdt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/extras/apache-solr-3.5.0/example/solr/data/index/_2e.fdx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/extras/apache-solr-3.5.0/example/solr/data/index/_2e.fnm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/extras/apache-solr-3.5.0/example/solr/data/index/_2e.frq" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/extras/apache-solr-3.5.0/example/solr/data/index/_2e.nrm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/extras/apache-solr-3.5.0/example/solr/data/index/_2e.prx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/extras/apache-solr-3.5.0/example/solr/data/index/_2e.tii" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/extras/apache-solr-3.5.0/example/solr/data/index/_2e.tis" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/extras/apache-solr-3.5.0/example/solr/data/index/_2p.fdt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/extras/apache-solr-3.5.0/example/solr/data/index/_2p.fdx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/extras/apache-solr-3.5.0/example/solr/data/index/_2p.fnm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/extras/apache-solr-3.5.0/example/solr/data/index/_2p.frq" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/extras/apache-solr-3.5.0/example/solr/data/index/_2p.nrm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/extras/apache-solr-3.5.0/example/solr/data/index/_2p.prx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/extras/apache-solr-3.5.0/example/solr/data/index/_2p.tii" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/extras/apache-solr-3.5.0/example/solr/data/index/_2p.tis" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/extras/apache-solr-3.5.0/example/solr/data/index/segments_2r" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/lovelyromcoms.iml" afterPath="$PROJECT_DIR$/.idea/lovelyromcoms.iml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/10041" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/10090" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/10192" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/10321" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/10820" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/10916" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/11425" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/11732" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/11738" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/11743" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/12112" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/12852" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/13020" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/13536" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/13627" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/13672" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/14561" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/14662879" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/14774" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/16812" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/18694" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/18707" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/24475" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/343953787" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/376804542" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/506764961" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/559550548" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/770669912" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/770671315" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/770672626" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/770672853" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/770680214" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/770680567" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/770714907" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/770732510" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/770738748" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/770739520" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/770802394" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/770816452" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/771236434" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/771240385" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/771242835" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/771248497" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/9185" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utilities/movies/9564" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/extras/apache-solr-3.5.0/example/solr/data/index/segments_2" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/extras/apache-solr-3.5.0/example/solr/data/index/segments.gen" afterPath="$PROJECT_DIR$/vendor/extras/apache-solr-3.5.0/example/solr/data/index/segments.gen" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/extras/apache-solr-3.5.0/example/solr/data/spellchecker/segments_1" afterPath="$PROJECT_DIR$/vendor/extras/apache-solr-3.5.0/example/solr/data/spellchecker/segments_1" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/helpers/home_helper.rb" afterPath="$PROJECT_DIR$/app/helpers/home_helper.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/home/_movie_list.html.erb" afterPath="$PROJECT_DIR$/app/views/home/_movie_list.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/home/_movie_of_the_day.html.erb" afterPath="$PROJECT_DIR$/app/views/home/_movie_of_the_day.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/home/index.html.erb" afterPath="$PROJECT_DIR$/app/views/home/index.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/application.html.erb" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/movies/index.js.erb" afterPath="$PROJECT_DIR$/app/views/movies/index.js.erb" />
     </list>
     <ignored path="lovelyromcoms.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -133,7 +102,7 @@
       <file leaf-file-name="edit.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/movies/edit.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="30" selection-start="621" selection-end="637" vertical-scroll-proportion="-5.625">
+            <state line="11" column="30" selection-start="672" selection-end="688" vertical-scroll-proportion="-5.625">
               <folding />
             </state>
           </provider>
@@ -178,7 +147,7 @@
       <file leaf-file-name="seeds.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/db/seeds.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.3245033">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -493,6 +462,46 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lovelyromcoms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lovelyromcoms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="utilities" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lovelyromcoms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lovelyromcoms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="utilities" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="movies" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1134,20 +1143,20 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1440" height="805" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32819074" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20974576" sideWeight="0.7223001" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2622721" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27769986" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27769986" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32819074" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3294964" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -1300,7 +1309,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/movies/edit.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="30" selection-start="621" selection-end="637" vertical-scroll-proportion="-5.625">
+        <state line="11" column="30" selection-start="672" selection-end="688" vertical-scroll-proportion="-5.625">
           <folding />
         </state>
       </provider>
@@ -1342,7 +1351,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/db/seeds.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.3245033">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
