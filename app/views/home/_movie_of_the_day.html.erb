@@ -1,6 +1,46 @@
-Movie of the day:
-<%= link_to edit_movie_path(@movie_of_the_day), :id => "movie_of_the_day_link" do%>
-     <%= @movie_of_the_day.title %> <br/>
-    <img width="120" height="178" src="<%= @movie_of_the_day.posters['profile'] %>"/><br/>
-<% end %>
-Couple: <img width="115" height="100" src="<%= @movie_of_the_day.abridged_cast[0]['image'] %>"/><%= @movie_of_the_day.abridged_cast[0]['name'] %>, <img width="115" height="100" src="<%= @movie_of_the_day.abridged_cast[1]['image'] %>"/><%= @movie_of_the_day.abridged_cast[1]['name'] %> <br/>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td class="bg9" width="297" style="height: 30px; padding-left: 19px;">
+      <h2 class="text3">Movie of the day</h2>
+    </td>
+  </tr>
+  <tr>
+    <td class="bg4" style="padding: 0px 21px 0 21px;">
+      <img width="120" height="178" src="<%= @movie_of_the_day.posters['profile'] %>"/>
+      <img width="115" height="100" src="<%= @movie_of_the_day.abridged_cast[0]['image'] %>" title="<%= @movie_of_the_day.abridged_cast[0]['name'] %>"/>,
+      <img width="115" height="100" src="<%= @movie_of_the_day.abridged_cast[1]['image'] %>" title="<%= @movie_of_the_day.abridged_cast[1]['name'] %>"/>
+    </td>
+  </tr>
+  <tr>
+    <td class="bg4" style="padding: 0px 21px 0 21px;">
+      <h1 class="text1" style="padding: 0px 21px 0 21px;">
+        <%= link_to edit_movie_path(@movie_of_the_day), :id => "movie_of_the_day_link" do %>
+            <%= @movie_of_the_day.title %> <br/>
+        <% end %>
+      </h1></td>
+  </tr>
+  <tr>
+    <td class="bg4" style="padding: 0px 21px 0 21px;">
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td><h2 class="text2">Synopsis
+            <span class="bullet">&nbsp;</span><a href="#"><img src="images/homepage18.gif" alt="" width="7" height="7" border="0"></a>
+          </h2></td>
+        </tr>
+        <tr>
+          <td>
+            <p><%= truncate(@movie_of_the_day.synopsis, :length => 300) %> <%= link_to edit_movie_path(@movie_of_the_day) do %>
+                  Learn more&hellip;
+              <% end %></p>
+          </td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>

@@ -1,6 +1,6 @@
     $(function() {
         jQuery("#movie_list").html("");
         <%@movie_list.each do |movie|%>
-        jQuery("#movie_list").append('<div class="title_in_list"><%= escape_javascript(link_to movie.title, edit_movie_path(movie)) %></div>');
+        jQuery("#movie_list").append('<tr><td class="bg8" style="padding-left: 21px;"><%= escape_javascript(link_to movie.title, edit_movie_path(movie)) %></td><td><%= movie.avg_score %></td></tr>');
         <% end %>
     });

@@ -1,11 +1,33 @@
-Top 10
-<%= form_tag(movies_path, :method => :get, :remote => true) do %>
-    <%= select_tag :sort_by, options_for_select(indicators_map) %>
-    <%= hidden_field_tag :layer_to_replace, "movie_list" %>
-    <%= submit_tag "search" %>
-<% end %>
-<div id="movie_list">
-  <% @movie_list.each do |movie| %>
-      <div class="title_in_list"><%= link_to movie.title, edit_movie_path(movie) %></div>
-  <% end %>
-</div>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="20%" class="bg6" style="height: 30px; padding-left: 19px;">
+      <h2 class="text3">Top 10</h2>
+    </td>
+    <td width="80%" class="bg6" style="height: 30px;">
+      <%= form_tag(movies_path, :method => :get, :remote => true) do %>
+          <%= select_tag :sort_by, options_for_select(indicators_map) %>
+          <%= hidden_field_tag :layer_to_replace, "movie_list" %>
+          <%= submit_tag "search" %>
+      <% end %>
+    </td>
+  </tr>
+  <tr width="100%">
+    <td width="100%">
+      <table width="100%" border="0" cellpadding="9" cellspacing="1">
+        <table width="100%" id="movie_list">
+          <% @movie_list.each do |movie| %>
+              <tr width="100%">
+                <td class="bg8" style="padding-left: 21px;" width="100%">
+                  <%= link_to movie.title, edit_movie_path(movie) %>
+                </td>
+                <td class="bg8" width="100%"><%= movie.avg_score %></td>
+              </tr>
+          <% end %>
+        </table>
+      </table>
+    </td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+  </tr>
+</table>
