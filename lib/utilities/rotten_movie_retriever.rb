@@ -95,7 +95,7 @@ class RottenMovieRetriever
       curl = Curl::Easy.http_get(url)
       curl.perform
       json_hash = ActiveSupport::JSON.decode(curl.body_str)
-      movie["trailer"] = json_hash["clips"][0]["links"]["alternate"]
+      movie["trailer"] = {"image"=>json_hash["clips"][0]["thumbnail"], "url"=>json_hash["clips"][0]["links"]["alternate"]}
     end
   end
 
