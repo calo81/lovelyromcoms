@@ -19,7 +19,7 @@
       <p><img width="120" height="178" src="<%= @movie.posters['profile'] %>"/>
         <fb:like href="<%= edit_movie_url @movie %>" width="450" height="80"/>
         <g:plusone href="<%= edit_movie_url @movie %>"></g:plusone>
-
+        <a type="amzn" search="<%= @movie.title %>" category="movies"><%= image_tag "buy-now-amazon.gif" %></a>
       </p>
 
       <p><%= @movie.synopsis_if_existent %></p>
