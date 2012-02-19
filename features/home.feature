@@ -9,7 +9,7 @@ Scenario: Texts visible in home
   Given I am on the homepage
   Then user can see "Top 10" text in the page
   And user can see "Movie of the day" text in the page
-  And user can see "Recommended to you" text in the page
+  And user can see "Recommendations" text in the page
 
 
 

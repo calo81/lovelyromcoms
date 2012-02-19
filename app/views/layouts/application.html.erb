@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://ogp.me/ns/fb#">
 <head>
   <title>
     <% if @movie %>
@@ -8,18 +8,66 @@
         Lovelyromcoms
     <% end %>
   </title>
+
+  <% if @movie %>
+      <meta property="og:title" content="<%= @movie.title %>"/>
+      <meta property="og:type" content="movie"/>
+      <meta property="og:url" content="<%= edit_movie_url @movie %>"/>
+      <meta property="og:image" content="<%= @movie.posters['profile'] %>"/>
+      <meta property="og:site_name" content="Lovelyromcoms"/>
+      <meta property="fb:app_id" content="158663780919239"/>
+      <meta property="og:description"
+            content="<%= @movie.synopsis %>"/>
+  <% end %>
+  <%= csrf_meta_tag %>
   <%= stylesheet_link_tag :all %>
   <%= javascript_include_tag :defaults %>
   <%= javascript_include_tag "jquery", "jquery-ui-1.8.17.custom.min", "jquery.autocomplete", "jquery.rating", "behaviours" %>
-  <%= csrf_meta_tag %>
+
 </head>
 <body>
+<div id="fb-root"></div>
+<script>
+    window.fbAsyncInit = function() {
+        FB.init({
+            appId      : '158663780919239', // App ID
+            channelUrl : '//WWW.LOVELYROMCOMS.CO.UK/channel.html', // Channel File
+            status     : true, // check login status
+            cookie     : true, // enable cookies to allow the server to access the session
+            xfbml      : true  // parse XFBML
+        });
+
+        // Additional initialization code here
+    };
+
+    // Load the SDK Asynchronously
+    (function(d) {
+        var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+        if (d.getElementById(id)) {
+            return;
+        }
+        js = d.createElement('script');
+        js.id = id;
+        js.async = true;
+        js.src = "//connect.facebook.net/en_US/all.js";
+        ref.parentNode.insertBefore(js, ref);
+    }(document));
+    (function() {
+        var po = document.createElement('script');
+        po.type = 'text/javascript';
+        po.async = true;
+        po.src = 'https://apis.google.com/js/plusone.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(po, s);
+    })();
+</script>
+
 <table width="100%" border="0" cellpadding="0" cellspacing="0">
   <tr>
     <td>
-      <table width="778" border="0" align="center" cellpadding="0" cellspacing="0">
+      <table width="1024" border="0" align="center" cellpadding="0" cellspacing="0">
         <tr valign="top">
-          <td width="500" style=""><img src="images/homepage03.jpg" alt="" width="500" height="70"></td>
+          <td width="746" style=""><img src="/images/homepage03.jpg" alt="" width="746" height="70"></td>
           <td width="278" class="bg2">
             <form name="form1" method="post" action="">
               <table width="240" border="0" cellspacing="0" cellpadding="0">
@@ -53,7 +101,7 @@
           </td>
         </tr>
       </table>
-      <table width="778" border="0" align="center" cellpadding="0" cellspacing="0" class="bg3" style="height: 30px;">
+      <table width="1024" border="0" align="center" cellpadding="0" cellspacing="0" class="bg3" style="height: 30px;">
         <tr align="center">
           <td width="93"><%= link_to "Home", root_path, :class=>"link1" %></td>
           <td width="93"><a href="#" class="link1">DVDs </a></td>
@@ -65,7 +113,7 @@
           <td width="34">&nbsp;</td>
         </tr>
       </table>
-      <table width="778" border="0" align="center" cellpadding="0" cellspacing="0" class="bg5">
+      <table width="1024" border="0" align="center" cellpadding="0" cellspacing="0" class="bg5">
         <tr>
           <td>
             <p class="notice"><%= notice %></p>
@@ -75,7 +123,7 @@
         </tr>
       </table>
       <%= yield %>
-      <table width="778" border="0" align="center" cellpadding="0" cellspacing="0" class="bg12">
+      <table width="1024" border="0" align="center" cellpadding="0" cellspacing="0" class="bg12">
         <tr>
           <td style="padding-left: 21px;">&nbsp;</td>
           <td style="padding-right: 21px;">&nbsp;</td>

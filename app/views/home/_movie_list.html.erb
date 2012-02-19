@@ -17,7 +17,7 @@
         <table width="100%" id="movie_list">
           <% @movie_list.each do |movie| %>
               <tr width="100%">
-                <td class="bg8" style="padding-left: 21px;" width="100%">
+                <td class="bg8 title_in_list" style="padding-left: 21px;" width="100%">
                   <%= link_to movie.title, edit_movie_path(movie) %>
                 </td>
                 <td class="bg8" width="100%"><%= movie.avg_score %></td>
