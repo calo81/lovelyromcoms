@@ -35,34 +35,14 @@ class Similarity
   end
 end
 
-class MockExtractor
-  attr_reader :rankings
-
-  def initialize
-    @rankings = {'Koopa'=>[{'movie'=>'Titanic', 'rating'=>4}, {'movie'=>'LOTR', 'rating'=>4}, {'movie'=>'Rambo', 'rating'=>3}], 'Mario'=>[{'movie'=>'Titanic', 'rating'=>4}, {'movie'=>'Braveheart', 'rating'=>5}, {'movie'=>'Rocky', 'rating'=>4}], 'Luigi'=>[{'movie'=>'Titanic', 'rating'=>4}, {'movie'=>'Braveheart', 'rating'=>5}, {'movie'=>'Harry Potter', 'rating'=>5}, {'movie'=>'LOTR', 'rating'=>5}]}
-  end
-
-  def extract_users
-    ['Mario', 'Luigi', 'Koopa']
-  end
-
-  def extract_movies_with_rankings(user)
-    @rankings[user]
-  end
-
-  def extract_movies
-    ['Titanic', 'LOTR', 'Braveheart', 'Harry Potter']
-  end
-end
-
 require_relative 'recommender'
-require_relative 'movie_lens100k_extractor'
-extractor = MovieLens100kExtractor.new
+require_relative 'file_ratings_extractor'
+extractor = FileRatingsExtractor.new('/Users/cscarioni/projects/lovelyromcoms/lib/utilities/recommendations/mapreduce/data_preparation/recommendation_feed')
 similarity = Similarity.new(extractor)
 similarity.generate_similarities
 
 recommender = Recommender.new(extractor, similarity.user_similarity_list)
 
-recommendations = recommender.recommendations_for('115')
+recommendations = recommender.recommendations_for('4f3fee227703d408c0000045')
 
 puts recommendations

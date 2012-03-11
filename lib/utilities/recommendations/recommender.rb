@@ -10,7 +10,7 @@ class Recommender
   def recommendations_for(user)
     movies = @extractor.extract_movies
     recommendations = []
-    movies.each_with_index do |movie, index|
+    movies.each do |movie|
       recommendations << [movie, get_estimated_rating_for_movie(movie, user)]
     end
     recommendations.delete_if do |recommendation|
