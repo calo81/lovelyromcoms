@@ -1,0 +1,26 @@
+For running the recommendation
+
+Inside the folder recommendation_file:
+
+- We run the create_input_file.rb script.
+- Then we run the hadoop_run.sh script
+
+Inside the folder data_preparation:
+
+- Run movie_lens_to_lovelyromcoms_id_map.rb
+
+Then for actually generate recommendations for user:
+
+require_relative 'recommender'
+require_relative 'file_ratings_extractor'
+extractor = FileRatingsExtractor.new('/Users/cscarioni/projects/lovelyromcoms/lib/utilities/recommendations/mapreduce/data_preparation/recommendation_feed')
+similarity = Similarity.new(extractor)
+similarity.generate_similarities
+
+recommender = Recommender.new(extractor, similarity.user_similarity_list)
+
+recommendations = recommender.recommendations_for('4f3fee227703d408c0000045')
+
+puts recommendations
+
+

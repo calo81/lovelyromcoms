@@ -1,9 +1,12 @@
+require_relative 'mongo_similarity_persister'
 class Similarity
   attr_reader :user_similarity_list
+  attr_accessor :similarity_persist_strategy
 
   def initialize(extractor)
     @extractor = extractor
     @user_similarity_list = {}
+    @similarity_persist_strategy = MongoSimilarityPersister.new
   end
 
   def generate_similarities
@@ -16,7 +19,7 @@ class Similarity
         similarity=0.0;
         user_2_rankings = @extractor.extract_movies_with_rankings(user_2)
         user_1_rankings.each do |ranking_1|
-          if (!@extractor.user_movie_ranking[user_2+ranking_1['movie']].nil?)
+          if (@extractor.user_movie_ranking[user_2+ranking_1['movie']])
             common_items += 1
             similarity += (ranking_1['rating'].to_i-@extractor.user_movie_ranking[user_2+ranking_1['movie']].to_i)**2
           end
@@ -27,7 +30,8 @@ class Similarity
           max_common_items = [user_1_rankings.size, user_2_rankings.size].min
           similarity = similarity * (common_items.to_f/max_common_items.to_f)
         end
-        @user_similarity_list[user_1+user_2] = similarity
+        @user_similarity_list[user_1+'UU'+user_2] = similarity
+        @similarity_persist_strategy.persist(user_1,user_2,similarity)
       end
       puts "Number #{index} User #{user_1} similarity done"
     end

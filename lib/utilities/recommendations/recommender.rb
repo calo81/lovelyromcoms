@@ -41,7 +41,7 @@ class Recommender
       users.each do |other_user|
         next if other_user == user
         if !find_user_rating_for_movie(other_user, movie).nil?
-          similarity = @similarity_data[user+other_user]
+          similarity = @similarity_data[user+'UU'+other_user]
           next if similarity.nil?
           other_user_rating = find_user_rating_for_movie(other_user, movie)
           weighted_rating = similarity.to_f * other_user_rating.to_f
