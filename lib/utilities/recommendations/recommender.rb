@@ -25,7 +25,7 @@ class Recommender
   private
 
   def find_user_rating_for_movie(user, movie)
-    movie_rating = @extractor.user_movie_ranking[user+movie]
+    movie_rating = @extractor.user_movie_ranking[user+"MM"+movie]
     if movie_rating.nil?
       return nil
     end
@@ -54,6 +54,7 @@ class Recommender
     else
       estimated_rating = nil
     end
+    puts "final estimated rated for movie #{movie} is #{estimated_rating}"
     estimated_rating
   end
 end

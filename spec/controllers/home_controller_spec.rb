@@ -3,11 +3,14 @@ require_relative '../../lib/utilities/recommendations/recommender'
 
 describe HomeController do
 
-  context "sign in fake user" do
-    before(:each) do
-      @user = stub(:user)
-      sign_in @user
-    end
+  let(:user) do
+    user = Factory(:user)
+    user.confirm!
+    user
+  end
+
+  before(:each) do
+    sign_in :user, user
   end
 
   it "should return movie of the day in index" do
@@ -39,7 +42,7 @@ describe HomeController do
   it "should return movie recommendations for user if current user exist" do
     recommender = mock(:recommender)
     @controller.should_receive(:recommender).and_return(recommender)
-    recommender.should_receive(:recommendations_for).with @user
+    recommender.should_receive(:recommendations_for)
 
     get :index
   end

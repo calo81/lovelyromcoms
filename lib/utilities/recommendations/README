@@ -1,6 +1,6 @@
 For running the recommendation
 
-Inside the folder recommendation_file:
+Inside the folder mapreduce :
 
 - We run the create_input_file.rb script.
 - Then we run the hadoop_run.sh script
@@ -17,7 +17,7 @@ extractor = FileRatingsExtractor.new('/Users/cscarioni/projects/lovelyromcoms/li
 similarity = Similarity.new(extractor)
 similarity.generate_similarities
 
-recommender = Recommender.new(extractor, similarity.user_similarity_list)
+recommender = Recommender.new(extractor, MongoBackedSimilarityData.new)
 
 recommendations = recommender.recommendations_for('4f3fee227703d408c0000045')
 

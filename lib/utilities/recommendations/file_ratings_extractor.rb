@@ -6,28 +6,24 @@ class FileRatingsExtractor
     @file_location=file_location
     @rankings = {}
     @user_movie_ranking ={}
+    @users ||= {}
+    @movies ||= {}
     File.open(@file_location, 'r') do |f|
       f.each_line do |line|
         values = line.split("|")
         @rankings[values[0]] ||= []
         @rankings[values[0]] << {'movie'=>values[1], 'rating'=>values[2]}
-        @user_movie_ranking[values[0]+values[1]]=values[2]
+        @user_movie_ranking[values[0]+"MM"+values[1]]=values[2]
+        extract_user_for_line line
+        extract_movie_for_line line
       end
     end
+    @users_list = @users.map  {|key,value| key}
+    @movies_list = @movies.map  {|key,value| key}
   end
 
   def extract_users
-    @users ||= []
-    return @users if !@users.empty?
-    File.open(@file_location, 'r') do |f|
-      f.each_line do |line|
-        user = line.split("|")[0]
-        if !@users.include? user
-          @users << user
-        end
-      end
-    end
-    @users
+    @users_list
   end
 
   def extract_movies_with_rankings(user)
@@ -35,16 +31,21 @@ class FileRatingsExtractor
   end
 
   def extract_movies
-    @movies ||= []
-    return @movies if !@movies.empty?
-    File.open(@file_location, 'r') do |f|
-      f.each_line do |line|
-        movie = line.split("|")[1]
-        if !@movies.include? movie
-          @movies << movie
-        end
-      end
+    @movies_list
+  end
+
+  private
+    def extract_user_for_line(line)
+    user = line.split("|")[0]
+    if !@users[user]
+      @users[user]=true
     end
-    @movies
+  end
+
+  def extract_movie_for_line(line)
+    movie = line.split("|")[1]
+    if !@movies[movie]
+      @movies[movie]=true
+    end
   end
 end
