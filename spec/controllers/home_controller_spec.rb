@@ -38,7 +38,7 @@ describe HomeController do
 
   it "should return movie recommendations for user if current user exist" do
     recommender = mock(:recommender)
-    ObjectContainer.should_receive(:get).with(:recommender).and_return(recommender)
+    @controller.should_receive(:recommender).and_return(recommender)
     recommender.should_receive(:recommendations_for).with @user
 
     get :index

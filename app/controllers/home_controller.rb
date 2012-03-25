@@ -1,7 +1,13 @@
 class HomeController < ApplicationController
+  inject :recommender
+
   def index
     @movie_of_the_day = Movie.find_movie_of_the_day
-    @recommended_movies = ObjectContainer.get(:recommender).recommendations_for(current_user)
+    if current_user
+      @recommended_movies = recommender.recommendations_for(current_user.id.to_s)
+    else
+      @recommended_movies = []
+    end
     movie_list
   end
 

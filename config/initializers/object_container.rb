@@ -23,7 +23,7 @@ class MongoBackedSimilarityData
 
   def [](key)
     columns = key.split("UU")
-    @coll.find("user_1"=>columns[0],"user_2"=>columns[1]).each {|row| return row["similarity"].to_f}
+    @coll.find("user_1"=>columns[0], "user_2"=>columns[1]).each { |row| return row["similarity"].to_f }
   end
 end
 
