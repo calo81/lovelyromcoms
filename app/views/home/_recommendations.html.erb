@@ -1,27 +1,42 @@
-<table width="297" border="0" cellpadding="0" cellspacing="0">
+<table width="297" border="0" cellpadding="0" cellspacing="0" class="recommendations_table">
     <tr>
       <td width="297" class="bg9" style="height: 30px; padding-left: 19px;"><h2 class="text3">Recommendations</h2></td>
     </tr>
     <tr>
       <td class="bg7">
         <table width="259" border="0" align="center" cellpadding="0" cellspacing="0">
-          <tr>
-            <td>&nbsp;</td>
-          </tr>
-          <tr>
-            <td><h3 class="text4">Movie x</h3></td>
-          </tr>
-          <tr>
-            <td><h4 class="text5">04.20.2007</h4></td>
-          </tr>
-          <tr>
-            <td>&nbsp;</td>
-          </tr>
-          <tr>
-            <td><img src="images/homepage14.jpg" alt="" width="70" height="70" class="img1">
 
-              <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nunc ipsum et orci. Aenean est. Cras eget
-                diam. Phasellus vitae magna. Sed dictum. Quisque bibendum.
+          <% @recommended_movies.each_with_index do |movie,i| %>
+              <tr>
+            <td>&nbsp;</td>
+          </tr>
+          <tr>
+            <td><h3 class="text4"><%= movie[0].title %></h3></td>
+          </tr>
+          <tr>
+            <td><h4 class="text5">
+            <p>
+              <input name="estimate<%= i %>" type="radio" class="disabledstar" value="1" disabled="disabled"/>
+              <input name="estimate<%= i %>" type="radio" class="disabledstar" value="2" disabled="disabled"/>
+              <input name="estimate<%= i %>" type="radio" class="disabledstar" value="3" disabled="disabled"/>
+              <input name="estimate<%= i %>" type="radio" class="disabledstar" value="4" disabled="disabled"/>
+              <input name="estimate<%= i %>" type="radio" class="disabledstar" value="5" disabled="disabled"/>
+            </p>
+             <script>
+                $(function() {
+                    $('input[name=estimate<%= i %>].disabledstar:eq(<%= movie[1].to_i - 1 %>)').attr('checked', 'checked');
+                    $('input[name=estimate<%= i %>].disabledstar').rating();
+                });
+            </script>
+            </h4></td>
+          </tr>
+          <tr>
+            <td>&nbsp;</td>
+          </tr>
+          <tr>
+            <td><img src="<%= movie[0].posters["profile"] %>" alt="" width="70" height="70" class="img1">
+
+              <p><%= movie[0].synopsis[0..200] unless  movie[0].synopsis.nil? %>
                 <a href="#"><img src="images/homepage18.gif" alt="" width="7" height="7" border="0"></a><span class="bullet">&nbsp;</span>
               </p></td>
           </tr>
@@ -31,58 +46,7 @@
           <tr>
             <td><img src="images/homepage11.gif" alt="" width="100%" height="1"></td>
           </tr>
-          <tr>
-            <td>&nbsp;</td>
-          </tr>
-          <tr>
-            <td><h3 class="text4">Magna bibendum etiam</h3></td>
-          </tr>
-          <tr>
-            <td><h4 class="text5">04.10.2007</h4></td>
-          </tr>
-          <tr>
-            <td>&nbsp;</td>
-          </tr>
-          <tr>
-            <td><img src="images/homepage15.jpg" alt="" width="70" height="70" class="img1">
-
-              <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nunc ipsum et orci. Aenean est. Cras eget
-                diam. Phasellus vitae magna. Sed dictum. Quisque bibendum.
-                <span class="bullet">&nbsp;</span><a href="#"><img src="images/homepage18.gif" alt="" width="7" height="7" border="0"></a>
-              </p></td>
-          </tr>
-          <tr>
-            <td><img src="images/spacer.gif" alt="" width="100" height="10"></td>
-          </tr>
-          <tr>
-            <td><img src="images/homepage11.gif" alt="" width="100%" height="1"></td>
-          </tr>
-          <tr>
-            <td>&nbsp;</td>
-          </tr>
-          <tr>
-            <td><h3 class="text4">Condimentum sed ipsum</h3></td>
-          </tr>
-          <tr>
-            <td><h4 class="text5">04.5.2007</h4></td>
-          </tr>
-          <tr>
-            <td>&nbsp;</td>
-          </tr>
-          <tr>
-            <td><img src="images/homepage16.jpg" alt="" width="70" height="70" class="img1">
-
-              <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nunc ipsum et orci. Aenean est. Cras eget
-                diam. Phasellus vitae magna. Sed dictum. Quisque bibendum.
-                <span class="bullet">&nbsp;</span><a href="#"><img src="images/homepage18.gif" alt="" width="7" height="7" border="0"></a>
-              </p></td>
-          </tr>
-          <tr>
-            <td><img src="images/spacer.gif" alt="" width="100" height="10"></td>
-          </tr>
-          <tr>
-            <td><img src="images/homepage11.gif" alt="" width="100%" height="1"></td>
-          </tr>
+          <% end %>
           <tr>
             <td>&nbsp;</td>
           </tr>

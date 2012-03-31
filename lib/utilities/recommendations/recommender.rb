@@ -14,7 +14,7 @@ class Recommender
       recommendations << [movie, get_estimated_rating_for_movie(movie, user)]
     end
     recommendations.delete_if do |recommendation|
-      recommendation[1].nil?
+      recommendation[1].nil? or recommendation[1].to_i == 0
     end
     recommendations.sort! do |e1, e2|
       e1[1]<=>e2[1]

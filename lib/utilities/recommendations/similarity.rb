@@ -1,4 +1,5 @@
 require_relative 'mongo_similarity_persister'
+require_relative '../thread_pool'
 class Similarity
   attr_reader :user_similarity_list
   attr_accessor :similarity_persist_strategy
@@ -42,9 +43,10 @@ class Similarity
       similarity = Math.sqrt(similarity/common_items)
       similarity = 1.0 - Math.tanh(similarity)
       max_common_items = [user_1_rankings.size, user_2_rankings.size].min
-      similarity = similarity * (common_items.to_f/max_common_items.to_f)
+      similarity = similarity * (common_items.to_f/max_common_items.to_f) if max_common_items > 10
     end
     @user_similarity_list[user_1+'UU'+user_2] = similarity
     @similarity_persist_strategy.persist(user_1, user_2, similarity)
+    puts "persisted #{user_1}, #{user_2}, #{similarity}"
   end
 end

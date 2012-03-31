@@ -21,3 +21,15 @@ Scenario: I can click in the movie title and go to the movie page
 Scenario: I can see a list of movies
   Given I am on the homepage
   Then I should see elements with class "title_in_list" at least 1 times
+
+Scenario: If  logged in I can see a personalized recommendations
+  Given I am logged in as "carlo@sca.com"
+  And recommendations for user "carlo@sca.com" are as follows:
+        |movie              |rating  |
+        |17 Again           |4.0     |
+        |Casanova           |3.5     |
+  When I am on the homepage
+  Then I should see "17 Again" within ".recommendations_table"
+  And I should see "Casanova" within ".recommendations_table"
+  And show me the page
+

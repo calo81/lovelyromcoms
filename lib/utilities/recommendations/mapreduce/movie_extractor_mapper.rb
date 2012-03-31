@@ -15,7 +15,7 @@ ARGF.each do |line|
      movie = coll.find().skip(line.to_i-1).limit(1).first
      user_ratings = retrieve_user_ratings_for_movie(movie)
      user_ratings.each do |user_rating|
-       puts user_rating["user_id"].to_s + "\t" + movie["title"] + "\t" + user_rating["review"]["score"].to_s
+       puts user_rating["user_id"].to_s + "|" + movie["_id"].to_s + "|" + user_rating["review"]["score"].to_s
      end
    rescue
      puts $!
