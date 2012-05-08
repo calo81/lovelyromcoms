@@ -47,6 +47,6 @@ class Similarity
     end
     @user_similarity_list[user_1+'UU'+user_2] = similarity
     @similarity_persist_strategy.persist(user_1, user_2, similarity)
-    puts "persisted #{user_1}, #{user_2}, #{similarity}"
+    #puts "persisted #{user_1}, #{user_2}, #{similarity}"
   end
 end

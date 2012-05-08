@@ -39,7 +39,7 @@
       <p><b>Rotten Tomatoes audience score:</b> <%= @movie.ratings["audience_score"] %></p>
 
       <p><b>Rotten Tomatoes critics score:</b> <%= @movie.ratings["critics_score"] %></p>
-      <% if @movie.trailer %>
+      <% if @movie['trailer'] %>
           <h2 class="text4">Trailer</h2>
 
           <p><%= link_to image_tag(@movie.trailer["image"], :size => "160x100"), @movie.trailer["url"], :target => '_blank' %></p>

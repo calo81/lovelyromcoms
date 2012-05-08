@@ -3,11 +3,7 @@ class HomeController < ApplicationController
 
   def index
     @movie_of_the_day = Movie.find_movie_of_the_day
-    if current_user
-      @recommended_movies = recommender.recommendations_for(current_user.id.to_s)
-    else
-      @recommended_movies = []
-    end
+    recommendations
     movie_list
   end
 
@@ -18,5 +14,13 @@ class HomeController < ApplicationController
                   else
                     Movie.retrieve_sorted_by(params[:sort_by].to_sym)
                   end
+  end
+
+  def recommendations
+    if current_user
+      @recommended_movies = recommender.recommendations_for(current_user.id.to_s)
+    else
+      @recommended_movies = Movie.top_by_critics_rating(5).map {|movie|[movie,4]}
+    end
   end
 end

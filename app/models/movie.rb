@@ -96,6 +96,10 @@ class Movie
     return ""
   end
 
+  def self.top_by_critics_rating(how_many)
+    retrieve_sorted_by('ratings.critics_score',:desc,how_many)
+  end
+
   private
 
   def replace_or_set_indicator(indicator_name, indicator_value, user)

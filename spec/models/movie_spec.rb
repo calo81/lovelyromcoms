@@ -104,4 +104,14 @@ describe Movie do
     movie.review_for_user(user).should ==  {"text"=>"I think it was crap",:score=>2}
   end
 
+  it "should allow to retrieve top movies by critics rating" do
+    movies = Movie.top_by_critics_rating(5)
+    movies.size.should == 5
+    rating = 100
+    movies.each do|movie|
+      raise "Not ordered by critics rating" if movie.ratings['critics_score']>rating
+      rating = movie.ratings['critics_score']
+    end
+  end
+
 end

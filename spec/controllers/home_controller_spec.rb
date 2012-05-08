@@ -40,10 +40,21 @@ describe HomeController do
   end
 
   it "should return movie recommendations for user if current user exist" do
-    recommender = mock(:recommender)
-    @controller.should_receive(:recommender).and_return(recommender)
-    recommender.should_receive(:recommendations_for)
+      recommender = mock(:recommender)
+      @controller.should_receive(:recommender).and_return(recommender)
+      recommender.should_receive(:recommendations_for)
 
+      get :index
+  end
+
+  it "should return top movies by ranking for recommendations when no current user exist" do
+    sign_out  user
+    Movie.should_receive(:top_by_critics_rating).with(5).and_return([1,2,3,4,5])
     get :index
+    recommendations = @controller.instance_variable_get("@recommended_movies")
+    recommendations.each_with_index do |recommendation,i|
+      recommendation[0].should == i+1
+      recommendation[1].should == 4
+    end
   end
 end
