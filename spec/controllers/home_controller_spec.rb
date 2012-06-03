@@ -1,5 +1,4 @@
 require 'spec_helper'
-require_relative '../../lib/utilities/recommendations/recommender'
 
 describe HomeController do
 
@@ -16,7 +15,7 @@ describe HomeController do
   it "should return movie of the day in index" do
     recommender = stub(:rec)
     ObjectContainer.stub(:get).and_return(recommender)
-    recommender.stub(:recommendations_for)
+    recommender.stub(:recommend).and_return(['dd'])
     Movie.should_receive(:find_movie_of_the_day).and_return(Movie.new(:title => "Die Hard"))
     get :index
   end
@@ -25,7 +24,7 @@ describe HomeController do
     Movie.stub(:find_movie_of_the_day)
     recommender = stub(:rec)
     ObjectContainer.stub(:get).and_return(recommender)
-    recommender.stub(:recommendations_for)
+    recommender.stub(:recommend).and_return(['dd'])
     Movie.should_receive(:retrieve_sorted_by).with(:title)
     get :index
   end
@@ -34,7 +33,7 @@ describe HomeController do
     Movie.stub(:find_movie_of_the_day)
     recommender = stub(:rec)
     ObjectContainer.stub(:get).and_return(recommender)
-    recommender.stub(:recommendations_for)
+    recommender.stub(:recommend).and_return(['dd'])
     Movie.should_receive(:retrieve_sorted_by).with(:"indicators.couple_chemistry")
     get :index, :sort_by => "indicators.couple_chemistry"
   end
@@ -42,8 +41,16 @@ describe HomeController do
   it "should return movie recommendations for user if current user exist" do
       recommender = mock(:recommender)
       @controller.should_receive(:recommender).and_return(recommender)
-      recommender.should_receive(:recommendations_for)
+      recommender.should_receive(:recommend)
 
+      get :index
+  end
+
+  it "should return top by ranking recommendations for user if current user exist" do
+      recommender = mock(:recommender)
+      @controller.should_receive(:recommender).and_return(recommender)
+      recommender.should_receive(:recommend).and_return []
+      Movie.should_receive(:top_by_critics_rating).with(5).and_return([1,2,3,4,5])
       get :index
   end
 

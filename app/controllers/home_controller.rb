@@ -18,9 +18,11 @@ class HomeController < ApplicationController
 
   def recommendations
     if current_user
-      @recommended_movies = recommender.recommendations_for(current_user.id.to_s)
-    else
-      @recommended_movies = Movie.top_by_critics_rating(5).map {|movie|[movie,4]}
+      @recommended_movies = recommender.recommend(current_user.id.to_s, 5)
+      if !@recommended_movies.nil? and !@recommended_movies.empty?
+        return
+      end
     end
+    @recommended_movies = Movie.top_by_critics_rating(5).map { |movie| [movie, 4] }
   end
 end

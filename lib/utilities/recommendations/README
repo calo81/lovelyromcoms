@@ -16,16 +16,5 @@ Inside the folder data_preparation:
 
 3. Then for actually generate recommendations for user:
 
-require_relative 'recommender'
-require_relative 'file_ratings_extractor'
-extractor = FileRatingsExtractor.new('/Users/cscarioni/projects/lovelyromcoms/lib/utilities/recommendations/mapreduce/data_preparation/recommendation_feed')
-similarity = Similarity.new(extractor)
-similarity.generate_similarities
-
-recommender = Recommender.new(extractor, MongoBackedSimilarityData.new)
-
-recommendations = recommender.recommendations_for('4f3fee227703d408c0000045')
-
-puts recommendations
-
+look at the ruby-recommender project on my github.
 

@@ -149,6 +149,8 @@ GEM
       activesupport (~> 3.0)
       railties (~> 3.0)
       rspec (~> 2.7.0)
+    ruby-recommender (0.0.1)
+      rspec
     rubyzip (0.9.6.1)
     sass (3.1.15)
     sass-rails (3.1.5)
@@ -206,6 +208,7 @@ DEPENDENCIES
   rsolr
   rspec-expectations (= 2.7.0)
   rspec-rails (= 2.7.0)
+  ruby-recommender
   sass-rails (~> 3.1.0)
   sprockets
   sqlite3
