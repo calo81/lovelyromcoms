@@ -1,10 +1,13 @@
 require 'recommendations'
+require 'utilities/rotten_movie_retriever'
 class ObjectContainer
   @objects = {}
 
   def self.init
     recommender = setup_recommender()
+    movie_retriever = RottenMovieRetriever.new
     @objects[:recommender]=recommender
+    @objects[:movie_retriever]=movie_retriever
   end
 
   def self.setup_recommender

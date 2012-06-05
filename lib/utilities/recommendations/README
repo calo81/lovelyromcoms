@@ -1,10 +1,11 @@
+
 For running the recommendation
 
 1. Extracting current saved rantings from the movies mongo collection
 Inside the folder mapreduce :
 
 - We run the create_input_file.rb script. This will simply generate a fie with line numbers with how many movies we have in the movies collection of mongo.
-- Then we run the hadoop_run.sh script. This will generate a file with the form "user|movie|rating"
+- Then we run the hadoop_run.sh script. This will generate a file with the form "user|movie|rating" or the movies that already have rating.
 
 
 2. Extract the information from Movie Lens and creating a file with the lovelyromcoms id in the form "user|movie_id|rating"
@@ -13,8 +14,11 @@ Inside the folder data_preparation:
 - Run movie_lens_to_lovelyromcoms_id_map.rb
 
 
+3. Import the generated file to the mongo ratings collection to create the Data Model:
 
-3. Then for actually generate recommendations for user:
+run the file  import_ratings_to_mongo.rb
+
+4. Then for actually generate recommendations for user:
 
 look at the ruby-recommender project on my github.
 

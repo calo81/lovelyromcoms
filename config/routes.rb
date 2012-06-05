@@ -7,7 +7,12 @@ Lovelyromcoms::Application.routes.draw do
     end
   end
   namespace :admin do
-    resources :movies
+    resources :movies do
+      collection do
+        get  :import
+        post  :do_import
+      end
+    end
   end
 
   root :to => "home#index"

@@ -45,12 +45,12 @@ class Movie
   end
 
   def avg_score
-    if !indicators or indicators.empty?
+    if !self["indicators"] or self["indicators"].empty?
       return 0
     end
     total = 0.0
     count = 0.0
-    indicators.each do |indicator, value|
+    self["indicators"].each do |indicator, value|
       total += value["total"]
       count += 1
     end

@@ -5,7 +5,7 @@ coll = db['movies']
 
 def replace_ids_with_titles_in_movie_lens_data
   movie_lens_id_to_title={}
-  File.open('/Volumes/VERBATIM/misc/ml-10M100K/movies.dat', 'r') do |file|
+  File.open('/tmp/data/ml-10M100K/movies.dat', 'r') do |file|
     file.each_line do |line|
       begin
         splitted_line = line.split("::")
@@ -16,7 +16,7 @@ def replace_ids_with_titles_in_movie_lens_data
       movie_lens_id_to_title[splitted_line[0]]=splitted_line[1]
     end
   end
-  File.open('/Volumes/VERBATIM/misc/ml-10M100K/ratings.dat', 'r') do |file|
+  File.open('/tmp/data/ml-10M100K/ratings.dat', 'r') do |file|
     File.open('file_with_title', 'w') do |file_to_save|
       file.each_line do |line|
         splitted_line = line.split("::")

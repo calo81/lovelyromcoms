@@ -11,7 +11,7 @@ class RottenMovieRetriever
   end
 
   def call_url_and_retrieve_json(url)
-    puts url
+    #puts url
     curl = Curl::Easy.http_get(url)
     curl.perform
     json_hash = ActiveSupport::JSON.decode(curl.body_str)
@@ -35,8 +35,9 @@ class RottenMovieRetriever
 
   def store_movie(movie)
     if movie
+      puts "SAVED!!"
       @movie_collection.insert movie
-      File.open("movies/#{movie["rotten_id"]}", "w") do |f|
+      File.open("#{File.dirname(__FILE__)}/movies/#{movie["rotten_id"]}", "w") do |f|
         f.puts movie.to_s
       end
     end
@@ -89,13 +90,13 @@ class RottenMovieRetriever
     end
   end
 
-   def update_trailer_url(movie)
+  def update_trailer_url(movie)
     if movie["links"]["clips"] and !movie["links"]["clips"].empty?
       url=movie["links"]["clips"]+"?apikey=rrmbqvpbr9ujrf4yu855aczv"
       curl = Curl::Easy.http_get(url)
       curl.perform
       json_hash = ActiveSupport::JSON.decode(curl.body_str)
-      movie["trailer"] = {"image"=>json_hash["clips"][0]["thumbnail"], "url"=>json_hash["clips"][0]["links"]["alternate"]}
+      movie["trailer"] = {"image" => json_hash["clips"][0]["thumbnail"], "url" => json_hash["clips"][0]["links"]["alternate"]}
     end
   end
 
@@ -105,7 +106,6 @@ class RottenMovieRetriever
 
   def retrieve_and_store_movies(search_term)
     json_hash = request_and_get_hash(search_term)
-    puts json_hash
     total = json_hash["total"].to_i
     if total>0
       movie = request_full_details(json_hash['movies'][0]['id'])
@@ -129,23 +129,29 @@ class RottenMovieRetriever
 end
 
 retriever=RottenMovieRetriever.new
-File.open("mapreduce/results.txt") do |file|
-  file.each_line do |line|
-    movie_name = line.split("\t")[0]
-    if movie_name.include?("(VG)")
-      next
-    end
-    movie_name.gsub!('"', "")
-    movie_name=movie_name.slice(0..(movie_name.index("(")-1))
-    movie_name.strip!
-    movie_name.gsub!(" ", "+")
-    puts movie_name
-    begin
-      retriever.retrieve_and_store_movies movie_name
-      sleep(0.2)
-    rescue
-      puts 'error but continuing. Error '+ $!.to_s
+
+def execute_full_retrieval
+  File.open("mapreduce/results.txt") do |file|
+    line_number = 0
+    start_in_line = 2993
+    file.each_line do |line|
+      line_number += 1
+      next if line_number<start_in_line
+      movie_name = line.split("\t")[0]
+      next if movie_name.include?("(VG)")
+      movie_name.gsub!('"', "")
+      movie_name=movie_name.slice(0..(movie_name.index("(")-1))
+      movie_name.strip!
+      movie_name.gsub!(" ", "+")
+      puts movie_name
+      begin
+        retriever.retrieve_and_store_movies movie_name
+        sleep(0.2)
+      rescue
+        puts 'error but continuing. Error '+ $!.to_s
+      end
     end
   end
 end
 
+#execute_full_retrieval

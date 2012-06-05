@@ -1,7 +1,7 @@
 <table width="100%" border="0" cellspacing="0" cellpadding="0">
   <tr>
     <td width="20%" class="bg6" style="height: 30px; padding-left: 19px;">
-      <h2 class="text3">Top 10</h2>
+      <h2 class="text3">Top 10</h2>&nbsp; <h4 class="text3">(from <%= Movie.all.count %>)</h4>
     </td>
     <td width="80%" class="bg6" style="height: 30px;">
       <%= form_tag(movies_path, :method => :get, :remote => true) do %>

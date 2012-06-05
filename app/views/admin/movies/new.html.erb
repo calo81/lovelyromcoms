@@ -1,0 +1,44 @@
+<p><%= link_to "Import Movie By Name", import_admin_movies_path %></p>
+<%= form_for [:admin, @movie] do |f| %>
+    <p>
+      <%= f.label "Title" %>
+      <%= text_field_tag "movie[title]" %>
+    </p>
+    <% 2.times do |time| %>
+        <p>
+          <%= f.label "Actor Picture URL" %>
+          <%= text_field_tag "abridged_cast[#{time}][image]",nil, :id=>"actor_#{time+1}_url" %>
+        </p>
+        <p>
+          <%= f.label "Actor Name" %>
+          <%= text_field_tag "abridged_cast[#{time}][name]",nil, :id=>"actor_#{time+1}_name" %>
+        </p>
+    <% end %>
+    <p>
+      <%= f.label :synopsis %>
+      <%= text_area_tag "movie[synopsis]" %>
+    </p>
+    <p>
+      <%= f.label :trailer %>
+      <%= text_area_tag "movie[trailer]" %>
+    </p>
+    <p>
+      <%= f.label :trailer %>
+      <%= text_field_tag "movie[posters[profile]]" %>
+    </p>
+    <p>
+      <%= f.label :poster %>
+      <%= text_field_tag "movie[posters[profile]]" %>
+    </p>
+    <p>
+      <%= f.label :critics_rating %>
+      <%= text_field_tag "movie[ratings[critics_score]]" %>
+    </p>
+    <p>
+      <%= f.label :audience_rating %>
+      <%= text_field_tag "movie[ratings[audience_score]]" %>
+    </p>
+    <p>
+      <%= f.submit %>
+    </p>
+<% end %>

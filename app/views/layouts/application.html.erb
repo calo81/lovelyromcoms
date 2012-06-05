@@ -2,14 +2,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://ogp.me/ns/fb#">
 <head>
   <title>
-    <% if @movie %>
+    <% if @movie and  @movie["title"] %>
         <%= @movie.title %>
     <% else %>
         Lovelyromcoms
     <% end %>
   </title>
 
-  <% if @movie %>
+  <% if @movie and  @movie["title"] %>
       <meta property="og:title" content="<%= @movie.title %>"/>
       <meta property="og:type" content="movie"/>
       <meta property="og:url" content="<%= edit_movie_url @movie %>"/>

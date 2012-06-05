@@ -8,3 +8,6 @@ rake start_mongo
 # To start solr
 rake start_solr
 
+
+Run the file "utilities/rotten_movie_retriever.rb" for retrieving the movies from different sources and storing on the system
+
