@@ -123,6 +123,7 @@ class RottenMovieRetriever
         movie['abridged_cast'][0]['image']=actor1_image
         movie['abridged_cast'][1]['image']=actor2_image
         store_movie movie
+        movie
       end
     end
   end

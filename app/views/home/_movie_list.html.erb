@@ -1,33 +1,45 @@
-<table width="100%" border="0" cellspacing="0" cellpadding="0">
-  <tr>
-    <td width="20%" class="bg6" style="height: 30px; padding-left: 19px;">
-      <h2 class="text3">Top 10</h2>&nbsp; <h4 class="text3">(from <%= Movie.all.count %>)</h4>
-    </td>
-    <td width="80%" class="bg6" style="height: 30px;">
-      <%= form_tag(movies_path, :method => :get, :remote => true) do %>
-          <%= select_tag :sort_by, options_for_select(indicators_map) %>
-          <%= hidden_field_tag :layer_to_replace, "movie_list" %>
-          <%= submit_tag "search" %>
+<script type="text/javascript" xmlns="http://www.w3.org/1999/html">
+    $(function () {
+
+        $('#movieListDiv #carousel').carouFredSel({
+            align:false,
+            items:10,
+            scroll:{
+                items:1,
+                duration:5000,
+                pauseDuration:0,
+                easing:'linear',
+                pauseOnHover:'immediate'
+            }
+        });
+
+        $("#movieListDiv #carousel .movieCarouselImageClass").cluetip({mouseOutClose:true,positionBy:'mouse',local: true, sticky: true,closeText: 'Close',showTitle: false,closePosition:'bottom'});
+
+    });
+</script>
+
+
+<div id="movieListDiv">
+  <div id="wrapper">
+    <p>Movies by title</p>
+
+    <div id="carousel">
+      <% @movie_list.each_with_index do |movie,i| %>
+          <div class="movieCarouselImageClass" rel="#listTooltipContent<%= i %>">
+            <img width="120" height="178" src="<%= movie.posters['profile'] %>"/>
+          </div>
+
+          <div id="listTooltipContent<%= i %>">
+            <p>
+              <h3 class="text4"><%= link_to movie.title, edit_movie_path(movie) %></h3>
+            </p>
+
+            <p>
+              <%= movie.synopsis[0..200] unless  movie.synopsis.nil? %>
+            </p>
+
+        </div>
       <% end %>
-    </td>
-  </tr>
-  <tr width="100%">
-    <td width="100%">
-      <table width="100%" border="0" cellpadding="9" cellspacing="1">
-        <table width="100%" id="movie_list">
-          <% @movie_list.each do |movie| %>
-              <tr width="100%">
-                <td class="bg8 title_in_list" style="padding-left: 21px;" width="100%">
-                  <%= link_to movie.title, edit_movie_path(movie) %>
-                </td>
-                <td class="bg8" width="100%"><%= movie.avg_score %></td>
-              </tr>
-          <% end %>
-        </table>
-      </table>
-    </td>
-  </tr>
-  <tr>
-    <td>&nbsp;</td>
-  </tr>
-</table>
+    </div>
+  </div>
+</div>

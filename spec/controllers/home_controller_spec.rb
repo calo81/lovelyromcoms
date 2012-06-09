@@ -1,5 +1,9 @@
 require 'spec_helper'
 
+class Recommendation
+  attr_accessor :item, :value
+end
+
 describe HomeController do
 
   let(:user) do
@@ -15,25 +19,27 @@ describe HomeController do
   it "should return movie of the day in index" do
     recommender = stub(:rec)
     ObjectContainer.stub(:get).and_return(recommender)
-    recommender.stub(:recommend).and_return(['dd'])
+    recommender.stub(:recommend).and_return([Recommendation.new])
     Movie.should_receive(:find_movie_of_the_day).and_return(Movie.new(:title => "Die Hard"))
     get :index
   end
 
   it "should return movie list by title when called with no  params" do
     Movie.stub(:find_movie_of_the_day)
+    Movie.stub(:find_by_id).and_return(Movie.new)
     recommender = stub(:rec)
     ObjectContainer.stub(:get).and_return(recommender)
-    recommender.stub(:recommend).and_return(['dd'])
+    recommender.stub(:recommend).and_return([Recommendation.new])
     Movie.should_receive(:retrieve_sorted_by).with(:title)
     get :index
   end
 
   it "should return movie list by the property passed" do
     Movie.stub(:find_movie_of_the_day)
+    Movie.stub(:find_by_id).and_return(Movie.new)
     recommender = stub(:rec)
     ObjectContainer.stub(:get).and_return(recommender)
-    recommender.stub(:recommend).and_return(['dd'])
+    recommender.stub(:recommend).and_return([Recommendation.new])
     Movie.should_receive(:retrieve_sorted_by).with(:"indicators.couple_chemistry")
     get :index, :sort_by => "indicators.couple_chemistry"
   end
@@ -41,7 +47,7 @@ describe HomeController do
   it "should return movie recommendations for user if current user exist" do
       recommender = mock(:recommender)
       @controller.should_receive(:recommender).and_return(recommender)
-      recommender.should_receive(:recommend)
+      recommender.should_receive(:recommend).and_return([Recommendation.new])
 
       get :index
   end

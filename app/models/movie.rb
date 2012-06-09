@@ -2,7 +2,7 @@ class Movie
   include MongoMapper::Document
 
   def self.find_movie_of_the_day
-    all[Random.rand(all.count)]
+    retrieve_sorted_by(:title)[0]
   end
 
   def self.retrieve_sorted_by(field, sorti=:asc, elements=10, page=1)

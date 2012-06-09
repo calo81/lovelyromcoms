@@ -3,6 +3,7 @@
 
 require File.expand_path('../config/application', __FILE__)
 require 'rake'
+require 'rsolr' 
 
 Lovelyromcoms::Application.load_tasks
 
@@ -18,4 +19,10 @@ end
 
 task :start_solr do
   exec "cd vendor/extras/apache-solr-3.5.0/example/;java -jar start.jar &"
+end
+
+task :reset_solr_index do 
+ solr = RSolr.connect :url => 'http://localhost:8983/solr/collection1/'        
+solr.delete_by_query('*:*') 
+solr.update :data => '<commit/>'
 end

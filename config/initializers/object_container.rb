@@ -1,5 +1,6 @@
 require 'recommendations'
 require 'utilities/rotten_movie_retriever'
+require 'utilities/index/indexer'
 class ObjectContainer
   @objects = {}
 
@@ -8,6 +9,7 @@ class ObjectContainer
     movie_retriever = RottenMovieRetriever.new
     @objects[:recommender]=recommender
     @objects[:movie_retriever]=movie_retriever
+    @objects[:indexer] = Indexer.new
   end
 
   def self.setup_recommender

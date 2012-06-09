@@ -3,7 +3,7 @@
 body {
 	margin: 0px;
 	padding: 0px;
-	background: #C9C9C5;
+    background: url('../images/background.jpg') repeat left top;
 }
 
 /** FORMS */

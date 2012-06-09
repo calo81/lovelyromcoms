@@ -19,10 +19,21 @@ class HomeController < ApplicationController
   def recommendations
     if current_user
       @recommended_movies = recommender.recommend(current_user.id.to_s, 5)
+      @recommended_movies = find_movies_for_each_id_returned(@recommended_movies)
       if !@recommended_movies.nil? and !@recommended_movies.empty?
         return
       end
     end
     @recommended_movies = Movie.top_by_critics_rating(5).map { |movie| [movie, 4] }
+  end
+
+  private
+  def find_movies_for_each_id_returned(recommended_movies)
+    found_movies = []
+    recommended_movies.each do |recommendation|
+      movie = Movie.find_by_id(recommendation.item)
+      found_movies << [movie, recommendation.value] if movie
+    end
+    found_movies
   end
 end

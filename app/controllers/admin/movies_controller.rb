@@ -1,5 +1,5 @@
 class Admin::MoviesController < ApplicationController
-  inject :movie_retriever
+  inject :movie_retriever, :indexer
   def index
     @movies = Movie.retrieve_sorted_by("title", :asc,2000)
   end
@@ -42,7 +42,8 @@ class Admin::MoviesController < ApplicationController
     movie_name =   params[:movie_to_import]
     movie_name.strip!
     movie_name.gsub!(" ", "+")
-    movie_retriever.retrieve_and_store_movies movie_name
+    movie = movie_retriever.retrieve_and_store_movies movie_name
+    #indexer.index [movie]
   end
 
   private

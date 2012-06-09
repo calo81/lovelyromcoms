@@ -1,56 +1,57 @@
-<table width="297" border="0" cellpadding="0" cellspacing="0" class="recommendations_table">
-    <tr>
-      <td width="297" class="bg9" style="height: 30px; padding-left: 19px;"><h2 class="text3">Recommendations</h2></td>
-    </tr>
-    <tr>
-      <td class="bg7">
-        <table width="259" border="0" align="center" cellpadding="0" cellspacing="0">
+<script type="text/javascript" xmlns="http://www.w3.org/1999/html">
+    $(function () {
 
-          <% @recommended_movies.each_with_index do |movie,i| %>
-              <tr>
-            <td>&nbsp;</td>
-          </tr>
-          <tr>
-            <td><h3 class="text4"><%= link_to movie[0].title, edit_movie_path(movie[0]) %></h3></td>
-          </tr>
-          <tr>
-            <td><h4 class="text5">
-            <p>
-              <input name="estimate<%= i %>" type="radio" class="disabledstar" value="1" disabled="disabled"/>
-              <input name="estimate<%= i %>" type="radio" class="disabledstar" value="2" disabled="disabled"/>
-              <input name="estimate<%= i %>" type="radio" class="disabledstar" value="3" disabled="disabled"/>
-              <input name="estimate<%= i %>" type="radio" class="disabledstar" value="4" disabled="disabled"/>
-              <input name="estimate<%= i %>" type="radio" class="disabledstar" value="5" disabled="disabled"/>
-            </p>
-             <script>
-                $(function() {
-                    $('input[name=estimate<%= i %>].disabledstar:eq(<%= movie[1].to_i - 1 %>)').attr('checked', 'checked');
-                    $('input[name=estimate<%= i %>].disabledstar').rating();
-                });
-            </script>
-            </h4></td>
-          </tr>
-          <tr>
-            <td>&nbsp;</td>
-          </tr>
-          <tr>
-            <td><img src="<%= movie[0].posters["profile"] %>" alt="" width="70" height="70" class="img1">
+        $('#recommendationsDiv #carousel').carouFredSel({
+            align:false,
+            items:4,
+            scroll:{
+                items:1,
+                duration:5000,
+                pauseDuration:0,
+                easing:'linear',
+                pauseOnHover:'immediate'
+            }
+        });
 
-              <p><%= movie[0].synopsis[0..200] unless  movie[0].synopsis.nil? %>
-                <a href="#"><img src="images/homepage18.gif" alt="" width="7" height="7" border="0"></a><span class="bullet">&nbsp;</span>
-              </p></td>
-          </tr>
-          <tr>
-            <td><img src="images/spacer.gif" alt="" width="100" height="10"></td>
-          </tr>
-          <tr>
-            <td><img src="images/homepage11.gif" alt="" width="100%" height="1"></td>
-          </tr>
-          <% end %>
-          <tr>
-            <td>&nbsp;</td>
-          </tr>
-        </table>
-      </td>
-    </tr>
-  </table>
+        $("#recommendationsDiv #carousel .movieCarouselImageClass").cluetip({mouseOutClose:true,positionBy:'mouse',local: true, sticky: true,closeText: 'Close',showTitle: false,closePosition:'bottom'});
+
+    });
+</script>
+
+<div id="recommendationsDiv">
+  <div id="wrapper">
+    <p>Recommendations</p>
+    <div id="carousel">
+      <% @recommended_movies.each_with_index do |movie, i| %>
+          <div class="movieCarouselImageClass" rel="#tooltipContent<%= i %>">
+            <img width="120" height="178" src="<%= movie[0].posters['profile'] %>" />
+          </div>
+
+            <div id="tooltipContent<%= i %>">
+              <p>
+                <h3 class="text4"><%= link_to movie[0].title, edit_movie_path(movie[0]) %></h3>
+              </p>
+
+              <p>
+                <%= movie[0].synopsis[0..200] unless  movie[0].synopsis.nil? %>
+              </p>
+
+              <p>
+                <input name="estimate<%= i %>" type="radio" class="disabledstar" value="1" disabled="disabled"/>
+                <input name="estimate<%= i %>" type="radio" class="disabledstar" value="2" disabled="disabled"/>
+                <input name="estimate<%= i %>" type="radio" class="disabledstar" value="3" disabled="disabled"/>
+                <input name="estimate<%= i %>" type="radio" class="disabledstar" value="4" disabled="disabled"/>
+                <input name="estimate<%= i %>" type="radio" class="disabledstar" value="5" disabled="disabled"/>
+
+              <script>
+                  $(function () {
+                      $('input[name=estimate<%= i %>].disabledstar:eq(<%= movie[1].to_i - 1 %>)').attr('checked', 'checked');
+                      $('input[name=estimate<%= i %>].disabledstar').rating();
+                  });
+              </script>
+              </p>
+          </div>
+      <% end %>
+    </div>
+  </div>
+</div>
