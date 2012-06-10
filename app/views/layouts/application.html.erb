@@ -2,14 +2,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://ogp.me/ns/fb#">
 <head>
   <title>
-    <% if @movie and  @movie["title"] %>
+    <% if @movie and @movie["title"] %>
         <%= @movie.title %>
     <% else %>
         Lovelyromcoms
     <% end %>
   </title>
 
-  <% if @movie and  @movie["title"] %>
+  <% if @movie and @movie["title"] %>
       <meta property="og:title" content="<%= @movie.title %>"/>
       <meta property="og:type" content="movie"/>
       <meta property="og:url" content="<%= edit_movie_url @movie %>"/>
@@ -17,31 +17,39 @@
       <meta property="og:site_name" content="Lovelyromcoms"/>
       <meta property="fb:app_id" content="158663780919239"/>
       <meta property="og:description"
-            content="<%= @movie.synopsis %>"/>
+            content="<%= @movie["synopsis"] if @movie["synopsis"] %>"/>
   <% end %>
   <%= csrf_meta_tag %>
   <%= stylesheet_link_tag :all %>
   <%= javascript_include_tag :defaults %>
-  <%= javascript_include_tag "jquery", "jquery-ui-1.8.17.custom.min", "jquery.autocomplete", "jquery.rating", "behaviours", "jquery.cluetip.all","jquery.carouFredSel-5.1.0" %>
+  <%= javascript_include_tag "jquery", "jquery-ui-1.8.17.custom.min", "jquery.autocomplete", "jquery.rating", "behaviours", "jquery.cluetip.all", "jquery.easing.1.3", "jquery.carouFredSel-5.1.0" %>
 
 </head>
 <body>
+<div id="fl_menu">
+  <div class="label">Lovely</div>
+  <div class="menu">
+    <a href="/" class="menu_item">Home</a>
+    <a href="#" class="menu_item">Contact us</a>
+  </div>
+</div>
+
 <div id="fb-root"></div>
 <script>
-    window.fbAsyncInit = function() {
+    window.fbAsyncInit = function () {
         FB.init({
-            appId      : '158663780919239', // App ID
-            channelUrl : '//WWW.LOVELYROMCOMS.CO.UK/channel.html', // Channel File
-            status     : true, // check login status
-            cookie     : true, // enable cookies to allow the server to access the session
-            xfbml      : true  // parse XFBML
+            appId:'158663780919239', // App ID
+            channelUrl:'//WWW.LOVELYROMCOMS.CO.UK/channel.html', // Channel File
+            status:true, // check login status
+            cookie:true, // enable cookies to allow the server to access the session
+            xfbml:true  // parse XFBML
         });
 
         // Additional initialization code here
     };
 
     // Load the SDK Asynchronously
-    (function(d) {
+    (function (d) {
         var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
         if (d.getElementById(id)) {
             return;
@@ -52,7 +60,7 @@
         js.src = "//connect.facebook.net/en_US/all.js";
         ref.parentNode.insertBefore(js, ref);
     }(document));
-    (function() {
+    (function () {
         var po = document.createElement('script');
         po.type = 'text/javascript';
         po.async = true;
@@ -61,50 +69,98 @@
         s.parentNode.insertBefore(po, s);
     })();
 </script>
-<SCRIPT charset="utf-8" type="text/javascript" src="http://ws.amazon.co.uk/widgets/q?ServiceVersion=20070822&MarketPlace=GB&ID=V20070822/GB/lovelyromcoms-21/8005/75447c81-7b1d-457a-8d79-17e5a1abea3f"> </SCRIPT> <NOSCRIPT><A HREF="http://ws.amazon.co.uk/widgets/q?ServiceVersion=20070822&MarketPlace=GB&ID=V20070822%2FGB%2Flovelyromcoms-21%2F8005%2F75447c81-7b1d-457a-8d79-17e5a1abea3f&Operation=NoScript">Amazon.co.uk Widgets</A></NOSCRIPT>
-                    <nav>
-                      <% if user_signed_in? %>
-                          Signed in as <%= current_user.email %>
-                          <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
-                      <% else %>
-                          <%= link_to "Sign in", new_user_session_path %>
-                          <%= link_to "Sign up", new_user_registration_path %>
-                      <% end %>
-                      <%= admins_only do %>
-                          <%= link_to "Movie Edition", admin_movies_path %>
-                      <% end %>
-                    </nav>
-            <form name="form1" method="post" action="">
-                  <input type="text" id="search" width="400px"/>
-                  <input name="inputsubmit1" type="submit" id="inputsubmit1" value="Search"/>
-            </form>
+<SCRIPT charset="utf-8" type="text/javascript" src="http://ws.amazon.co.uk/widgets/q?ServiceVersion=20070822&MarketPlace=GB&ID=V20070822/GB/lovelyromcoms-21/8005/75447c81-7b1d-457a-8d79-17e5a1abea3f"></SCRIPT>
+<NOSCRIPT>
+  <A HREF="http://ws.amazon.co.uk/widgets/q?ServiceVersion=20070822&MarketPlace=GB&ID=V20070822%2FGB%2Flovelyromcoms-21%2F8005%2F75447c81-7b1d-457a-8d79-17e5a1abea3f&Operation=NoScript">Amazon.co.uk
+    Widgets</A></NOSCRIPT>
+<div style="float: left;">
+  <nav>
+    <% if user_signed_in? %>
+        Signed in as <%= current_user.email %>
+        <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+    <% else %>
+        <%= link_to "Sign in", new_user_session_path %>
+        <%= link_to "Sign up", new_user_registration_path %>
+    <% end %>
+    <%= admins_only do %>
+        <%= link_to "Movie Edition", admin_movies_path %>
+    <% end %>
+  </nav>
+</div>
+<div style="float: right;">
+  <form name="form1" method="post" action="">
+    <input type="text" id="search" width="400px"/>
+  </form>
+</div>
+<div>
 
-            <p class="notice"><%= notice %></p>
+  <p class="notice"><%= notice %></p>
 
-            <p class="alert"><%= alert %></p>
+  <p class="alert"><%= alert %></p>
 
-      <%= yield %>
+</div>
+
+<%= yield %>
 </body>
 <script>
     $("#search").autocomplete({
-        url: '<%= search_movies_path %>',
-        showResult: function(value, data) {
+        url:'<%= search_movies_path %>',
+        showResult:function (value, data) {
             valueAndUrl = value.split(":::")
             return '<img src="' + valueAndUrl[1] + '" height="42" width="42"/><span style="color:#000000;background-color: gray; border-style: dotted">' + valueAndUrl[0] + '</span>';
         },
-        onItemSelect: function(item) {
+        onItemSelect:function (item) {
             valueAndUrl = item.value.split(":::");
             document.location.href = '/movies/' + valueAndUrl[2] + '/edit'
         },
-        displayValue:function(value, data) {
+        displayValue:function (value, data) {
             return value.split(":::")[0];
         },
-        mustMatch: false,
-        maxItemsToShow: 10,
-        selectFirst: false,
-        autoFill: true,
-        selectOnly: true,
-        remoteDataType: 'json'
+        mustMatch:false,
+        maxItemsToShow:10,
+        selectFirst:false,
+        autoFill:true,
+        selectOnly:true,
+        remoteDataType:'json'
     });
+
+    $float_speed = 1500; //milliseconds
+    $float_easing = "easeOutQuint";
+    $menu_fade_speed = 500; //milliseconds
+    $closed_menu_opacity = 0.75;
+
+    //cache vars
+    $fl_menu = $("#fl_menu");
+    $fl_menu_menu = $("#fl_menu .menu");
+    $fl_menu_label = $("#fl_menu .label");
+
+    $(window).load(function () {
+        menuPosition = $('#fl_menu').position().top;
+        FloatMenu();
+        $fl_menu.hover(
+                function () { //mouse over
+                    $fl_menu_label.fadeTo($menu_fade_speed, 1);
+                    $fl_menu_menu.fadeIn($menu_fade_speed);
+                },
+                function () { //mouse out
+                    $fl_menu_label.fadeTo($menu_fade_speed, $closed_menu_opacity);
+                    $fl_menu_menu.fadeOut($menu_fade_speed);
+                }
+        );
+    });
+
+    $(window).scroll(function () {
+        FloatMenu();
+    });
+
+    function FloatMenu() {
+        var scrollAmount = $(document).scrollTop();
+        var newPosition = menuPosition + scrollAmount;
+        if ($(window).height() < $fl_menu.height() + $fl_menu_menu.height()) {
+            $fl_menu.css("top", menuPosition);
+        } else {
+            $fl_menu.stop().animate({top:newPosition}, $float_speed, $float_easing);
+        }
+    }
 </script>
 </html>
